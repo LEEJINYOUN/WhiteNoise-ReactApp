@@ -7,7 +7,7 @@ import ListsDetail from "./routes/ListsDetail";
 
 function App() {
   return (
-    <section className="w-full max-w-screen-2xl overflow-auto mx-auto">
+    <section className="w-full max-w-screen-xl overflow-auto mx-auto">
       <header className="sticky top-0 bg-white z-10">
         <Navbar />
       </header>

@@ -18,13 +18,15 @@ const menu = [
 
 export default function Navbar() {
   const location = useLocation();
+  const btnStyle =
+    "border border-gray-300 rounded-3xl px-4 py-2 text-base font-bold text-sky-400 hover:text-sky-600 transition duration-300 ease-in-out";
   return (
-    <section className="flex justify-between items-center px-6 ">
+    <section className="flex justify-between items-center px-6">
       <NavLink to="/">
         <h1 className="text-3xl font-bold">W • N</h1>
       </NavLink>
       <nav>
-        <ul className="flex gap-5 items-center p-3 text-xl">
+        <ul className="flex gap-6 items-center p-3 text-2xl">
           {menu.map((item, key) => (
             <li key={key}>
               <NavLink to={item.href}>
@@ -32,7 +34,9 @@ export default function Navbar() {
               </NavLink>
             </li>
           ))}
-          <NavLink to="/login">로그인</NavLink>
+          <NavLink to="/login" className={btnStyle}>
+            로그인
+          </NavLink>
         </ul>
       </nav>
     </section>
