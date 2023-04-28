@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import searchJson from "../video/search.json";
+import { useNavigate, useParams } from "react-router-dom";
 
 const words = ["파도", "풀벌레", "모닥불", "비"];
 
-// const YOUTUBE_API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
+const YOUTUBE_API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 export default function Lists() {
+  const { search } = useParams();
+  const navigate = useNavigate();
   const [youtubeData, setYoutubeData] = useState([]);
   const getYoutubeData = async () => {
     const fakeData = searchJson.items;
@@ -47,16 +50,23 @@ export default function Lists() {
       <>
         <ul>
           {youtubeData !== ""
-            ? youtubeData.map((item, key) => (
-                <li key={key}>
+            ? youtubeData.map((list, key) => (
+                <li
+                  key={key}
+                  onClick={() => {
+                    navigate(`/Lists/detail/${list.id.videoId}`, {
+                      state: { list },
+                    });
+                  }}
+                >
                   <img
-                    src={item.snippet.thumbnails.medium.url}
-                    alt={item.snippet.title}
+                    src={list.snippet.thumbnails.medium.url}
+                    alt={list.snippet.title}
                   />
                   <div>
-                    <p>{item.snippet.title}</p>
-                    <p>{item.snippet.channelTitle}</p>
-                    <p>{item.snippet.publishedAt.slice(0, 10)}</p>
+                    <p>{list.snippet.title}</p>
+                    <p>{list.snippet.channelTitle}</p>
+                    <p>{list.snippet.publishedAt.slice(0, 10)}</p>
                   </div>
                 </li>
               ))
