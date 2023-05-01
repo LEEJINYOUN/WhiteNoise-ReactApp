@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-
 import { useGoogleLogin } from "@react-oauth/google";
 
 export default function Login({ user, setUser }) {
-  const login = useGoogleLogin({
+  const googleLogin = useGoogleLogin({
     onSuccess: async (response) => {
       try {
         const res = await axios.get(
@@ -27,29 +26,20 @@ export default function Login({ user, setUser }) {
       }
     },
   });
-  const logout = () => {
-    setUser("");
-    window.localStorage.removeItem("userInfo");
-    console.log("로그아웃 성공");
-  };
-
   useEffect(() => {
     if (localStorage.length !== 0) {
-      let getData = JSON.parse(localStorage.getItem("userInfo"));
-      setUser(getData);
+      let getLocalData = JSON.parse(localStorage.getItem("userInfo"));
+      setUser(getLocalData);
     }
-  }, []);
+  }, [setUser]);
   return (
     <div>
-      {user && (
-        <div>
-          <h3>{user.name} 님 환영합니다.</h3>
-        </div>
-      )}
       {Object.keys(user).length === 0 ? (
-        <button onClick={login}>구글 로그인</button>
+        <button onClick={googleLogin}>구글 로그인</button>
       ) : (
-        <button onClick={logout}>로그아웃</button>
+        <div>
+          <h3>{user.name}님 환영합니다.</h3>
+        </div>
       )}
     </div>
   );

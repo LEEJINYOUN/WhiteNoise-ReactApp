@@ -20,10 +20,9 @@ export default function Navbar({ user, setUser }) {
   const location = useLocation();
   const btnStyle =
     "border border-gray-300 rounded-3xl px-4 py-2 text-base font-bold text-sky-400 hover:text-sky-600 transition duration-300 ease-in-out";
-  const logout = () => {
+  const oauthLogout = () => {
     setUser("");
     window.localStorage.removeItem("userInfo");
-    console.log("로그아웃 성공");
   };
   return (
     <section className="flex justify-between items-center px-6">
@@ -39,7 +38,7 @@ export default function Navbar({ user, setUser }) {
               </NavLink>
             </li>
           ))}
-          {localStorage.getItem("userInfo") === null ? (
+          {Object.keys(user).length === 0 ? (
             <NavLink to="/login" className={btnStyle}>
               로그인
             </NavLink>
@@ -55,7 +54,7 @@ export default function Navbar({ user, setUser }) {
                   alt="user profile"
                 />
               </NavLink>
-              <NavLink to="/login" className={btnStyle} onClick={logout}>
+              <NavLink to="/login" className={btnStyle} onClick={oauthLogout}>
                 로그아웃
               </NavLink>
             </>
