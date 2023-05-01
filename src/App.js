@@ -5,7 +5,7 @@ import Home from "./routes/Home";
 import Lists from "./routes/Lists";
 import Login from "./routes/Login";
 import ListsDetail from "./routes/ListsDetail";
-import Auth from "./routes/Auth";
+import Auth from "./components/Auth";
 import { useState } from "react";
 import GoogleProfile from "./components/GoogleProfile";
 import KakaoProfile from "./components/KakaoProfile";
