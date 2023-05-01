@@ -1,8 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useGoogleLogin } from "@react-oauth/google";
+import { useNavigate } from "react-router-dom";
+
+const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${process.env.REACT_APP_KAKAO_REST_API_KEY}&redirect_uri=${process.env.REACT_APP_KAKAO_REDIRECT_URI}&response_type=code`;
 
 export default function Login({ user, setUser }) {
+  const navigate = useNavigate();
   const googleLogin = useGoogleLogin({
     onSuccess: async (response) => {
       try {
@@ -21,31 +26,27 @@ export default function Login({ user, setUser }) {
         };
         setUser(userObject);
         localStorage.setItem("userInfo", JSON.stringify(userObject));
+        navigate("/GoogleProfile");
       } catch (err) {
         console.log(err);
       }
     },
   });
-  useEffect(() => {
-    if (localStorage.length !== 0) {
-      let getLocalData = JSON.parse(localStorage.getItem("userInfo"));
-      setUser(getLocalData);
-    }
-  }, [setUser]);
+  const btnStyle = "px-4 py-2 rounded-lg font-bold cursor-pointer";
   return (
-    <section>
-      {Object.keys(user).length === 0 ? (
-        <button
-          className="px-4 py-2 rounded-lg  bg-blue-400 text-white cursor-pointer hover:bg-blue-500 "
-          onClick={googleLogin}
-        >
-          구글 로그인
-        </button>
-      ) : (
-        <div>
-          <img src={user.photo ?? undefined} alt="user profile" />
-          <h3>{user.name}님 환영합니다.</h3>
-        </div>
+    <section className="flex flex-col">
+      {Object.keys(user).length === 0 && (
+        <>
+          <button
+            className={`${btnStyle} bg-blue-400 text-white hover:bg-blue-500 `}
+            onClick={googleLogin}
+          >
+            구글 로그인
+          </button>
+          <button className={`${btnStyle} bg-yellow-400 hover:bg-yellow-500`}>
+            <Link to={KAKAO_AUTH_URL}>카카오 로그인</Link>
+          </button>
+        </>
       )}
     </section>
   );

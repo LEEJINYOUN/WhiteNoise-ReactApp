@@ -22,7 +22,7 @@ export default function Navbar({ user, setUser }) {
     "border border-gray-300 rounded-3xl px-4 py-2 text-base font-bold text-sky-400 hover:text-sky-600 transition duration-300 ease-in-out";
   const oauthLogout = () => {
     setUser("");
-    window.localStorage.removeItem("userInfo");
+    window.localStorage.clear();
   };
   return (
     <section className="flex justify-between items-center px-6">
