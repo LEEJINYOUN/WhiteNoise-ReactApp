@@ -31,7 +31,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div ref={ref} className="px-[15px] py-[25px] grid grid-cols-2 border">
+      <div ref={ref} className="px-[15px] py-[25px] grid grid-cols-2">
         <div className="flex justify-center">
           <div className="m-auto w-[500px] h-auto">
             <h1 className="my-2 font-bold text-xl md:text-2xl lg:text-3xl animate__animated animate__fadeInUp">
@@ -51,6 +51,49 @@ export default function Home() {
             src="https://images.unsplash.com/photo-1518803194621-27188ba362c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80"
             alt="rain"
           />
+        </div>
+      </div>
+      <div className="max-w-screen-2xl m-auto w-full px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div>
+            <img
+              className="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1561010533-8600b9995372?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+              alt="wave"
+            />
+          </div>
+          <div>
+            <img
+              className="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1615318657783-22f2588a50df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt="bonfire"
+            />
+          </div>
+          <div>
+            <img
+              className="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1529148482759-b35b25c5f217?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt="library"
+            />
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1559117762-db98c1e47a88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt="smallRiver"
+            />
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1483450388369-9ed95738483c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt="airplane"
+            />
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1477601263568-180e2c6d046e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt="snow"
+            />
+          </div>
         </div>
       </div>
     </section>
