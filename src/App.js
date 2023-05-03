@@ -26,9 +26,10 @@ function App() {
       <main className="w-full flex justify-center bg-neutral-100 min-h-full">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Lists" element={<Lists />} />
-          <Route path="/Lists/detail/:videoId" element={<ListsDetail />} />
-          <Route path="/Oauth/kakao/callback" element={<Auth />} />
+          <Route path="/lists" element={<Lists />} />
+          <Route path="/lists/:keyword" element={<Lists />} />
+          <Route path="/lists/detail/:videoId" element={<ListsDetail />} />
+          <Route path="/oauth/kakao/callback" element={<Auth />} />
           <Route
             path="/GoogleProfile"
             element={<GoogleProfile user={user} />}
@@ -39,7 +40,7 @@ function App() {
           />
 
           <Route
-            path="/Login"
+            path="/login"
             element={<Login user={user} setUser={setUser} />}
           />
         </Routes>
