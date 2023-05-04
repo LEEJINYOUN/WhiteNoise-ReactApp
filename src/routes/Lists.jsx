@@ -4,12 +4,11 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const words = ["파도", "풀벌레", "모닥불", "비"];
-const YOUTUBE_API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 export default function Lists() {
   const [text, setText] = useState("");
   const { keyword } = useParams();
-  const youtubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${text}&key=${YOUTUBE_API_KEY}`;
+  const youtubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=백색소음 ${text}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`;
   const fakeURL = `/lists/search.json`;
   const {
     isLoading,
@@ -45,10 +44,10 @@ export default function Lists() {
         />
       </form>
       <>
-        <div>{keyword ? `${keyword}` : "검색어 없음"}</div>
+        <div>{keyword && `${keyword}`}</div>
         {isLoading && <p>로딩중...</p>}
         {error && <p>오류입니다.</p>}
-        {lists && (
+        {keyword && lists ? (
           <ul>
             {lists.map((list, key) => (
               <li
@@ -71,6 +70,8 @@ export default function Lists() {
               </li>
             ))}
           </ul>
+        ) : (
+          <p>검색어를 입력하세요.</p>
         )}
       </>
     </>

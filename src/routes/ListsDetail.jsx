@@ -5,6 +5,7 @@ export default function ListsDetail() {
   const {
     state: { list },
   } = useLocation();
+  const { title, channelTitle, description } = list.snippet;
   return (
     <div>
       <iframe
@@ -12,14 +13,14 @@ export default function ListsDetail() {
         type="text/html"
         width="100%"
         height="640"
-        src={`https://www.youtube.com/embed/${list.snippet.id}`}
+        src={`http://www.youtube.com/embed/${list.id.videoId}`}
         frameBorder="0"
-        title={list.snippet.title}
+        title={title}
       />
       <div>
-        <h2>{list.snippet.title}</h2>
-        <h3>{list.snippet.channelTitle}</h3>
-        <pre>{list.snippet.description}</pre>
+        <h2>{title}</h2>
+        <h3>{channelTitle}</h3>
+        <pre>{description}</pre>
       </div>
     </div>
   );
