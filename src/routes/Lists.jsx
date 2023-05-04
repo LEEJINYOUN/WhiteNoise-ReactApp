@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { AiOutlineSearch, AiOutlineCloseCircle } from "react-icons/ai";
 
 const words = ["파도", "풀벌레", "모닥불", "비"];
 
@@ -34,46 +35,29 @@ export default function Lists() {
   }, [keyword]);
 
   return (
-    <>
-      <form onSubmit={onSubmit}>
-        <input
-          type="text"
-          placeholder="입력한 후 엔터"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
+    <section className="w-full flex flex-col max-w-screen-lg">
+      <form
+        className="grid gp-10 bg-gray-300 rounded-[10px] p-[3rem]"
+        onSubmit={onSubmit}
+      >
+        <div className="flex justify-between items-center rounded-[8px] gap-[10px] bg-white p-5 shadow-lg">
+          <AiOutlineSearch className="text-[25px] cursor-pointer" />
+          <input
+            type="text"
+            className="bg-transparent text-blue-500 focus:outline-none w-[100%]"
+            placeholder="입력한 후 엔터"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+          <AiOutlineCloseCircle
+            className="text-[30px] text-[#a5a6a6] hover:text-black cursor-pointer"
+            onClick={() => setText("")}
+          />
+          <button className="bg-blue-500 w-[100px] h-ull px-4 py-2 rounded-[10px] text-white cursor-pointer hover:bg-blue-300">
+            검색
+          </button>
+        </div>
       </form>
-      <>
-        <div>{keyword && `${keyword}`}</div>
-        {isLoading && <p>로딩중...</p>}
-        {error && <p>오류입니다.</p>}
-        {keyword && lists ? (
-          <ul>
-            {lists.map((list, key) => (
-              <li
-                key={key}
-                onClick={() => {
-                  navigate(`/lists/detail/${list.id.videoId}`, {
-                    state: { list },
-                  });
-                }}
-              >
-                <img
-                  src={list.snippet.thumbnails.medium.url}
-                  alt={list.snippet.title}
-                />
-                <div>
-                  <p>{list.snippet.title}</p>
-                  <p>{list.snippet.channelTitle}</p>
-                  <p>{list.snippet.publishedAt.slice(0, 10)}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>검색어를 입력하세요.</p>
-        )}
-      </>
-    </>
+    </section>
   );
 }
