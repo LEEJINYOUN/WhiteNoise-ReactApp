@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { AiOutlineSearch, AiOutlineCloseCircle } from "react-icons/ai";
+import {
+  AiOutlineSearch,
+  AiOutlineCloseCircle,
+  AiOutlineHeart,
+} from "react-icons/ai";
 
 const words = ["파도", "풀벌레", "모닥불", "비"];
 
@@ -35,7 +39,7 @@ export default function Lists() {
   }, [keyword]);
 
   return (
-    <section className="w-full flex flex-col max-w-screen-lg">
+    <section className="w-full flex flex-col max-w-screen-xl">
       <form
         className="grid gp-10 bg-gray-300 rounded-[10px] p-[3rem]"
         onSubmit={onSubmit}
@@ -58,6 +62,58 @@ export default function Lists() {
           </button>
         </div>
       </form>
+      <div className="my-5">
+        {isLoading && <p>로딩중...</p>}
+        {error && <p>오류입니다.</p>}
+        {keyword && lists ? (
+          <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {lists.map((list, key) => (
+              <li className="rounded-lg mx-4 xl:mx-0" key={key}>
+                <img
+                  className="w-full cursor-pointer rounded-lg hover:rounded-none ease-out duration-300"
+                  src={list.snippet.thumbnails.medium.url}
+                  alt={list.snippet.title}
+                  onClick={() => {
+                    navigate(`/lists/detail/${list.id.videoId}`, {
+                      state: { list },
+                    });
+                  }}
+                />
+                <div>
+                  <p
+                    className="cursor-pointer font-semibold text-base my-2 line-clamp-2"
+                    onClick={() => {
+                      navigate(`/lists/detail/${list.id.videoId}`, {
+                        state: { list },
+                      });
+                    }}
+                  >
+                    {list.snippet.title}
+                  </p>
+                  <p className="text-sm opacity-80">
+                    {list.snippet.channelTitle}
+                  </p>
+                  <div className="flex flex-row justify-between">
+                    <p className="text-sm opacity-80">
+                      {list.snippet.publishedAt.slice(0, 10)}
+                    </p>
+                    <button
+                      className="cursor-pointer"
+                      onClick={() => console.log("클릭")}
+                    >
+                      <AiOutlineHeart />
+                    </button>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="flex justify-center font-bold text-xl">
+            검색어를 입력하세요.
+          </p>
+        )}
+      </div>
     </section>
   );
 }

@@ -23,7 +23,7 @@ function App() {
       <header className="sticky top-0 max-w-screen-xl m-auto bg-white z-10">
         <Navbar user={user} setUser={setUser} />
       </header>
-      <main className="w-full flex justify-center bg-neutral-100 min-h-full">
+      <main className="w-full flex justify-center min-h-full">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/lists" element={<Lists />} />
