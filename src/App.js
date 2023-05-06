@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./routes/Home";
+import Lists from "./routes/Lists";
+import Login from "./routes/Login";
+import ListsDetail from "./routes/ListsDetail";
+import Auth from "./components/Auth";
+import { useState } from "react";
+import GoogleProfile from "./components/GoogleProfile";
+import KakaoProfile from "./components/KakaoProfile";
 
 function App() {
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    if (localStorage.length !== 0) {
+      let getLocalData = JSON.parse(localStorage.getItem("userInfo"));
+      setUser(getLocalData);
+    }
+  }, [setUser]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <section className="w-full overflow-auto mx-auto">
+      <header className="sticky top-0 max-w-screen-xl m-auto bg-white z-10 ">
+        <Navbar user={user} setUser={setUser} />
       </header>
-    </div>
+      <main className="w-full flex justify-center min-h-full">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/lists" element={<Lists />} />
+          <Route path="/lists/:keyword" element={<Lists />} />
+          <Route path="/lists/detail/:videoId" element={<ListsDetail />} />
+          <Route path="/oauth/kakao/callback" element={<Auth />} />
+          <Route
+            path="/GoogleProfile"
+            element={<GoogleProfile user={user} />}
+          />
+          <Route
+            path="/KakaoProfile"
+            element={<KakaoProfile user={user} setUser={setUser} />}
+          />
+
+          <Route
+            path="/login"
+            element={<Login user={user} setUser={setUser} />}
+          />
+        </Routes>
+      </main>
+    </section>
   );
 }
 
