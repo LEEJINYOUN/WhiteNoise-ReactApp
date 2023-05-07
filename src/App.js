@@ -9,6 +9,7 @@ import Auth from "./components/Auth";
 import { useState } from "react";
 import GoogleProfile from "./components/GoogleProfile";
 import KakaoProfile from "./components/KakaoProfile";
+import MyPage from "./routes/Mypage";
 
 function App() {
   const [user, setUser] = useState({});
@@ -38,10 +39,13 @@ function App() {
             path="/KakaoProfile"
             element={<KakaoProfile user={user} setUser={setUser} />}
           />
-
           <Route
             path="/login"
             element={<Login user={user} setUser={setUser} />}
+          />
+          <Route
+            path="/user/:userName"
+            element={<MyPage user={user} setUser={setUser} />}
           />
         </Routes>
       </main>
