@@ -20,7 +20,7 @@ export default function Auth() {
       );
       window.Kakao.init(process.env.REACT_APP_KAKAO_REST_API_KEY);
       window.Kakao.Auth.setAccessToken(res.data.access_token);
-      navigate("/KakaoProfile");
+      navigate("/");
     } catch (err) {
       console.log(err);
     }

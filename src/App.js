@@ -7,8 +7,6 @@ import Login from "./routes/Login";
 import ListsDetail from "./routes/ListsDetail";
 import Auth from "./components/Auth";
 import { useState } from "react";
-import GoogleProfile from "./components/GoogleProfile";
-import KakaoProfile from "./components/KakaoProfile";
 import MyPage from "./routes/Mypage";
 
 function App() {
@@ -31,14 +29,6 @@ function App() {
           <Route path="/lists/:keyword" element={<Lists />} />
           <Route path="/lists/detail/:videoId" element={<ListsDetail />} />
           <Route path="/oauth/kakao/callback" element={<Auth />} />
-          <Route
-            path="/GoogleProfile"
-            element={<GoogleProfile user={user} />}
-          />
-          <Route
-            path="/KakaoProfile"
-            element={<KakaoProfile user={user} setUser={setUser} />}
-          />
           <Route
             path="/login"
             element={<Login user={user} setUser={setUser} />}
