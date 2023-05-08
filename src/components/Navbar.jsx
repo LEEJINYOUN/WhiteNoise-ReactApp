@@ -50,7 +50,7 @@ export default function Navbar({ user, setUser }) {
               >
                 <img
                   className="w-[33px] h-[33px] rounded-full"
-                  src={user.photo ?? undefined}
+                  src={user.image ?? undefined}
                   alt="user profile"
                 />
               </NavLink>

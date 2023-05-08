@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useGoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
+import { addUser } from "../service/user";
 
 const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${process.env.REACT_APP_KAKAO_REST_API_KEY}&redirect_uri=${process.env.REACT_APP_KAKAO_REDIRECT_URI}&response_type=code`;
 
@@ -19,13 +20,27 @@ export default function Login({ user, setUser }) {
             },
           }
         );
-        let userObject = {
-          email: res.data.email,
+        if (!res.data.email) {
+          return false;
+        }
+        addUser({
+          id: res.data.sub,
           name: res.data.name,
-          photo: res.data.picture,
+          image: res.data.picture,
+          email: res.data.email,
+          username: res.data.email.split("@")[0],
+        });
+
+        let userObject = {
+          id: res.data.sub,
+          name: res.data.name,
+          image: res.data.picture,
+          email: res.data.email,
+          username: res.data.email.split("@")[0],
         };
         setUser(userObject);
         localStorage.setItem("userInfo", JSON.stringify(userObject));
+
         navigate("/");
       } catch (err) {
         console.log(err);
