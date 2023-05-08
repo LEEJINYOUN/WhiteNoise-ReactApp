@@ -6,6 +6,7 @@ import {
   AiOutlineSearch,
   AiOutlineCloseCircle,
   AiOutlineHeart,
+  AiFillHeart,
 } from "react-icons/ai";
 
 const words = ["파도", "풀벌레", "모닥불", "비"];
@@ -33,6 +34,8 @@ export default function Lists() {
       console.log("잘못된 검색입니다.");
     }
   };
+
+  const [liked, setLiked] = useState(false);
 
   useEffect(() => {
     setText(keyword || "");
@@ -99,9 +102,19 @@ export default function Lists() {
                     </p>
                     <button
                       className="cursor-pointer"
-                      onClick={() => console.log("클릭")}
+                      onClick={() => {
+                        if (localStorage.getItem("userInfo") === null) {
+                          alert("먼저 로그인해주세요.");
+                        } else {
+                          setLiked((prev) => !prev);
+                        }
+                      }}
                     >
-                      <AiOutlineHeart />
+                      {liked === true ? (
+                        <AiFillHeart className="fill-red-500" />
+                      ) : (
+                        <AiOutlineHeart />
+                      )}
                     </button>
                   </div>
                 </div>
