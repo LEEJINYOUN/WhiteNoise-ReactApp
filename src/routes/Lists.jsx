@@ -10,11 +10,12 @@ import {
 } from "react-icons/ai";
 
 const words = ["파도", "풀벌레", "모닥불", "비"];
+const GET_DATA_COUNT = 10;
 
 export default function Lists() {
   const [text, setText] = useState("");
   const { keyword } = useParams();
-  const youtubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=백색소음 ${text}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`;
+  const youtubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${GET_DATA_COUNT}&q=백색소음 ${text}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`;
   const fakeURL = `/lists/search.json`;
   const {
     isLoading,
@@ -35,7 +36,7 @@ export default function Lists() {
     }
   };
 
-  const [liked, setLiked] = useState(false);
+  const [liked, setLiked] = useState(Array(GET_DATA_COUNT).fill(false));
 
   useEffect(() => {
     setText(keyword || "");
@@ -106,11 +107,13 @@ export default function Lists() {
                         if (localStorage.getItem("userInfo") === null) {
                           alert("먼저 로그인해주세요.");
                         } else {
-                          setLiked((prev) => !prev);
+                          let likeArray = [...liked];
+                          likeArray[key] = !likeArray[key];
+                          setLiked(likeArray);
                         }
                       }}
                     >
-                      {liked === true ? (
+                      {liked[key] === true ? (
                         <AiFillHeart className="fill-red-500" />
                       ) : (
                         <AiOutlineHeart />
