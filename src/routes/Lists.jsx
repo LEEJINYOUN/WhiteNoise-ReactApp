@@ -2,13 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import {
-  AiOutlineSearch,
-  AiOutlineCloseCircle,
-  AiOutlineHeart,
-  AiFillHeart,
-} from "react-icons/ai";
-import { addBookmark, removeBookmark } from "../service/user";
+import { AiOutlineSearch, AiOutlineCloseCircle } from "react-icons/ai";
+import { bookmarkCheck } from "../service/user";
 
 const words = ["파도", "풀벌레", "모닥불", "비"];
 const GET_DATA_COUNT = 10;
@@ -112,29 +107,19 @@ export default function Lists() {
                           let likeArray = [...liked];
                           likeArray[key] = !likeArray[key];
                           setLiked(likeArray);
-                          if (likeArray[key] === true) {
-                            addBookmark({
-                              id: user.id,
-                              videoId: list.id.videoId,
-                              thumbnails: list.snippet.thumbnails.medium.url,
-                              title: list.snippet.title,
-                              channelTitle: list.snippet.channelTitle,
-                              publishedAt: list.snippet.publishedAt,
-                            });
-                          } else {
-                            removeBookmark({
-                              id: user.id,
-                              videoId: list.id.videoId,
-                            });
-                          }
+                          bookmarkCheck({
+                            email: user.email,
+                            id: user.id,
+                            videoId: list.id.videoId,
+                            thumbnails: list.snippet.thumbnails.medium.url,
+                            title: list.snippet.title,
+                            channelTitle: list.snippet.channelTitle,
+                            publishedAt: list.snippet.publishedAt,
+                          });
                         }
                       }}
                     >
-                      {liked[key] === true ? (
-                        <AiFillHeart className="fill-red-500" />
-                      ) : (
-                        <AiOutlineHeart />
-                      )}
+                      추가
                     </button>
                   </div>
                 </div>
