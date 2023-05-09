@@ -7,7 +7,7 @@ import Login from "./routes/Login";
 import ListsDetail from "./routes/ListsDetail";
 import Auth from "./components/Auth";
 import { useState } from "react";
-import MyPage from "./routes/Mypage";
+import MyPage from "./routes/MyPage";
 
 function App() {
   const [user, setUser] = useState({});
