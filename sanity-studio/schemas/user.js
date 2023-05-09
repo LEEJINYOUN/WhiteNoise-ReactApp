@@ -30,7 +30,13 @@ export default {
       of: [
         {
           type: 'object',
-          fields: [{type: 'string', name: 'videoId'}],
+          fields: [
+            {type: 'string', name: 'videoId'},
+            {type: 'string', name: 'thumbnails'},
+            {type: 'string', name: 'title'},
+            {type: 'string', name: 'channelTitle'},
+            {type: 'string', name: 'publishedAt'},
+          ],
         },
       ],
       validation: (Rule) => Rule.unique(),
