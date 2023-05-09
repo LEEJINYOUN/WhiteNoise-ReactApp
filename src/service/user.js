@@ -49,3 +49,11 @@ export async function removeBookmark({ id, videoId }) {
       console.log(unset);
     });
 }
+
+export async function getBookmarks({ email }) {
+  return client.fetch(
+    `*[_type == "user" && email == "${email}"][0]{
+      "bookmarks" : bookmarks[]}
+    `
+  );
+}
