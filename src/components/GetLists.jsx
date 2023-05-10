@@ -11,7 +11,7 @@ export default function GetLists({
   navigate,
   bookmark,
   setBookmark,
-  getUser,
+  user,
 }) {
   const youtubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${GET_DATA_COUNT}&q=백색소음 ${text}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`;
   const fakeURL = `/lists/search.json`;
@@ -62,8 +62,8 @@ export default function GetLists({
                         bookmarkArray[key] = !bookmarkArray[key];
                         setBookmark(bookmarkArray);
                         bookmarkCheck({
-                          email: getUser.email,
-                          id: getUser.id,
+                          email: user.email,
+                          id: user.id,
                           videoId: list.id.videoId,
                           thumbnails: list.snippet.thumbnails.medium.url,
                           title: list.snippet.title,
