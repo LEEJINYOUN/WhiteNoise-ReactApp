@@ -1,12 +1,13 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { bookmarkCheck } from "../service/user";
+import { AiOutlineCheck } from "react-icons/ai";
 
 export default function ListsDetail() {
   const {
     state: { list },
   } = useLocation();
-  const { title } = list.snippet;
+  const { title, publishedAt } = list.snippet;
   const user = JSON.parse(localStorage.getItem("userInfo"));
   return (
     <section className="flex flex-col w-10/12 md:w-8/12 lg:w-6/12">
@@ -18,28 +19,31 @@ export default function ListsDetail() {
         frameBorder="0"
         title={title}
       />
-      <div className="flex justify-between mt-5">
+      <div className="flex flex-col mt-5">
         <h2 className="text-sm md:text-base lg:text-lg font-bold">{title}</h2>
-        <button
-          className="text-2xl cursor-pointer"
-          onClick={() => {
-            if (localStorage.getItem("userInfo") === null) {
-              alert("먼저 로그인해주세요.");
-            } else {
-              bookmarkCheck({
-                email: user.email,
-                id: user.id,
-                videoId: list.id.videoId,
-                thumbnails: list.snippet.thumbnails.medium.url,
-                title: list.snippet.title,
-                channelTitle: list.snippet.channelTitle,
-                publishedAt: list.snippet.publishedAt,
-              });
-            }
-          }}
-        >
-          추가
-        </button>
+        <div className="flex flex-row justify-between mt-2">
+          <p className="text-md opacity-80">{publishedAt.slice(0, 10)}</p>
+          <button
+            className="cursor-pointer border-2 border-gray-400 rounded-full p-1 hover:bg-gray-400 hover:text-white"
+            onClick={() => {
+              if (localStorage.getItem("userInfo") === null) {
+                alert("로그인 후 이용해주세요.");
+              } else {
+                bookmarkCheck({
+                  email: user.email,
+                  id: user.id,
+                  videoId: list.id.videoId,
+                  thumbnails: list.snippet.thumbnails.medium.url,
+                  title: list.snippet.title,
+                  channelTitle: list.snippet.channelTitle,
+                  publishedAt: list.snippet.publishedAt,
+                });
+              }
+            }}
+          >
+            <AiOutlineCheck />
+          </button>
+        </div>
       </div>
     </section>
   );
