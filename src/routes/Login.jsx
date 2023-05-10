@@ -52,16 +52,31 @@ export default function Login({ user, setUser }) {
   return (
     <section className="w-full h-[90vh]">
       {Object.keys(user).length === 0 && (
-        <div className="w-[200px] h-auto absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-          <button
-            className={`${btnStyle} bg-blue-400 text-white hover:bg-blue-500`}
-            onClick={googleLogin}
-          >
-            구글 로그인
-          </button>
-          <button className={`${btnStyle} bg-yellow-400 hover:bg-yellow-500`}>
-            <Link to={KAKAO_AUTH_URL}>카카오 로그인</Link>
-          </button>
+        <div className="w-[350px] h-[300px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] shadow-2xl flex flex-col justify-center">
+          <h2 className="flex justify-center items-center my-7 font-bold text-2xl">
+            로그인
+          </h2>
+          <div className="flex justify-center items-center my-7">
+            <button
+              className="cursor-pointer border border-gray-300 rounded-full mx-3 w-[45px] h-[45px]"
+              onClick={googleLogin}
+            >
+              <img
+                className="flex justify-center m-auto w-[25px] h-[25px]"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/882px-Google_%22G%22_Logo.svg.png"
+                alt="googleLogo"
+              />
+            </button>
+            <button className="cursor-pointer border border-gray-300 rounded-full mx-3 w-[45px] h-[45px]">
+              <Link to={KAKAO_AUTH_URL}>
+                <img
+                  className="flex justify-center m-auto w-full h-full"
+                  src="http://www.mzuu.co.kr/design/mzuu/btn_kakao.png"
+                  alt="KaKaoLogo"
+                />
+              </Link>
+            </button>
+          </div>
         </div>
       )}
     </section>
