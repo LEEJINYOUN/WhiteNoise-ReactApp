@@ -1,0 +1,692 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "wiTViM8RaY1kqzTs_mM0cOiWK2s",
+  "nextPageToken": "CBQQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 20
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "JxnMLLJ2jHL8WUgzzB1rq5FIV7Q",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "-X_rCJFIx38"
+      },
+      "snippet": {
+        "publishedAt": "2022-07-27T22:45:00Z",
+        "channelId": "UCmINqjJ8zRO-W238iB-Pb6Q",
+        "title": "5분만에 꿈나라 직행│쉬~소리+빗소리+물소리│수면교육 백색소음 │10시간 연속재생, 광고없음│whitenoise, shhh~",
+        "description": "[쉬소리 백색소음 음원 구매링크](MP3파일) https://smartstore.naver.com/ssamcraft/products/7978011747 음원은 이런분들에게 추천 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/-X_rCJFIx38/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/-X_rCJFIx38/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/-X_rCJFIx38/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "달빛소리 ASMR",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-07-27T22:45:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "DF80YkH90MdDhZQgFI4rc8nSBw0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "fMit1H7L5pg"
+      },
+      "snippet": {
+        "publishedAt": "2022-07-03T05:08:30Z",
+        "channelId": "UCq57Dyv_VsuN7_rjYomHywA",
+        "title": "[12시간] 델타파 + 빗소리 + 쉬소리 백색소음 | 미국 수면의학회 추천 | 수면음악 | 불면증 치료",
+        "description": "[중간광고 없음] 여러분의 구독과 좋아요로 콘텐츠가 유지될 수 있습니다. [델타파 백색소음] 델타파 관련 논문에 따르면 수면과 관련 있 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fMit1H7L5pg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fMit1H7L5pg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fMit1H7L5pg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "꿀잼 아트스쿨",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-07-03T05:08:30Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "TwjnN4Me3UgNAx-mIw4Jpkh7fgU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "PFjLGy202Q8"
+      },
+      "snippet": {
+        "publishedAt": "2023-01-10T04:33:55Z",
+        "channelId": "UCfn_Pt9pMPUj8kG9Hynry0Q",
+        "title": "10시간 아기 수면 백색소음 자장가 🌙 빗소리 + 피아노 + 쉬소리 ASMR 🎧 음악치료 연구자료 | 플로우스케이프 제작영상",
+        "description": "신생아 백색소음 아기 및 성인 청력 보호 | 귀가 아프지 않은 쉬소리 | 불면증 음악치료 / 수면 관련 전문가와 함께 제작한 ASMR 화이트 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/PFjLGy202Q8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/PFjLGy202Q8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/PFjLGy202Q8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Safe Sound Korea",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-01-10T04:33:55Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "7sZAip1J00WT64WoKARnJYkaV8k",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "bTJP8RfaCJQ"
+      },
+      "snippet": {
+        "publishedAt": "2018-09-30T13:00:07Z",
+        "channelId": "UCsLgKKiv8kDDGy1stC8BxVA",
+        "title": "공부 집중력 올려준다는 진짜 100% 백색소음 white noise 😜 시험기간 필수 ASMR",
+        "description": "강성태 #asmr #집중력높이는음악 공부 방법이 고민이신 분들은 학습진단을 무료로 해드립니다. ▷ https://bit.ly/2JH0yM7 공신 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/bTJP8RfaCJQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/bTJP8RfaCJQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/bTJP8RfaCJQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "공부의신 강성태",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-09-30T13:00:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "UQknY7b4vC25Y12CN1McNDIt1T0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "C9jRj9mITTA"
+      },
+      "snippet": {
+        "publishedAt": "2016-03-17T17:55:18Z",
+        "channelId": "UC_Xjg_BpywMUOUZvN67Ua6w",
+        "title": "자연의소리 -계곡물소리 3시간 -백색소음 화이트노이즈",
+        "description": "지난주 갔던 천마산의 계곡 물소리네요. 아직 곳곳에 얼음이 얼어있네요. ~ 시원한 물소리가 듣기 좋습니다. 일정시간 반복되는 영상 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/C9jRj9mITTA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/C9jRj9mITTA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/C9jRj9mITTA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "smilemedia",
+        "liveBroadcastContent": "none",
+        "publishTime": "2016-03-17T17:55:18Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "iUyb8Oi7DzhNKAO5QeNv6r_oDho",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "lQ0fS2meTYQ"
+      },
+      "snippet": {
+        "publishedAt": "2021-11-12T20:00:27Z",
+        "channelId": "UCR_-5nSCnmZvpHoj8OYOUcQ",
+        "title": "불면증에 좋은 최고의 빗소리 10분이내 수면 백색소음 자장가 ASMR | Rain Sounds For Sleeping, White Noise",
+        "description": "불면증에 좋은 최고의 빗소리 10분이내 수면 백색소음 자장가 ASMR | Rain Sounds For Sleeping, White Noise ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/lQ0fS2meTYQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/lQ0fS2meTYQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/lQ0fS2meTYQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Relax Sleep ASMR",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-11-12T20:00:27Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "yUuPuOtEBjQ4Gy_6LDftkofydg4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "hygyKJdKSaI"
+      },
+      "snippet": {
+        "publishedAt": "2019-04-26T05:19:44Z",
+        "channelId": "UCTNSHWayQ_PAVion0wRYbyQ",
+        "title": "12시간)모짜르트 자장가 + 빗소리 (피아노, 백색소음, 음악소리 작게) / 클래식, 수면유도, Classic, 백색소음 / 삐삐쀼 / 12 Hours) Lullaby",
+        "description": "모짜르트 자장가와 빗소리가 섞여있습니다. 자장가의 볼륨을 잔잔하게 줄이고 백색소음이 더 잘들리게 하였습니다. 감사합니다.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/hygyKJdKSaI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/hygyKJdKSaI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/hygyKJdKSaI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "삐삐쀼",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-04-26T05:19:44Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "zTu9oY9_P9lVKj0r7leqRZcUvhE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "xRuHxlUoy2s"
+      },
+      "snippet": {
+        "publishedAt": "2016-06-13T09:16:49Z",
+        "channelId": "UCa1JMg2pvlDVja4p453pQ_w",
+        "title": "백색 소음 (화이트 노이즈) 딥 스페이스 Sueno 8 시간 잠자는",
+        "description": "연구 작업 등을 위해 악기 음악, 편안한 음악, 클래식 음악, 운동, 행복한 음악, 음악이 채널에서는 모든 종류의 음악을 찾을 수 ☆ 가입 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/xRuHxlUoy2s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/xRuHxlUoy2s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/xRuHxlUoy2s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "음악",
+        "liveBroadcastContent": "none",
+        "publishTime": "2016-06-13T09:16:49Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "zK9fOxGU8dkM7Dw-5AW0gWNA_0E",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "TDi5cUzaY5A"
+      },
+      "snippet": {
+        "publishedAt": "2023-01-11T07:16:00Z",
+        "channelId": "UCfn_Pt9pMPUj8kG9Hynry0Q",
+        "title": "아기 수면 백색소음 12시간 🌙 빗소리 + 고요한 음악 🎧 쉬소리 다음단계 ASMR | 신생아 성인 불면증 음악치료 연구자료",
+        "description": "신생아 백색소음 아기 및 성인 청력 보호 | 귀가 아프지 않은 사운드 | 불면증 음악치료 / 수면 관련 전문가와 함께 제작한 ASMR 화이트 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/TDi5cUzaY5A/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/TDi5cUzaY5A/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/TDi5cUzaY5A/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Safe Sound Korea",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-01-11T07:16:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "0w9I0C5yToKF65IfEc6zXn9LtRU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "iOl6fIXqpYk"
+      },
+      "snippet": {
+        "publishedAt": "2018-01-01T08:15:08Z",
+        "channelId": "UCFrp2-l45AKK7hFIBhyEV2w",
+        "title": "백색소음 | 대형 독서실 백색소음기 | 공부용 타이머 Study Timer 3시간",
+        "description": "공부 백색소음 독서실 - 백색소음기.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/iOl6fIXqpYk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/iOl6fIXqpYk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/iOl6fIXqpYk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "White Noise Box백색소음 상자",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-01-01T08:15:08Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "kMUDo5nRWgQ2LNvKO0gZE1RyQCo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "NBY6JusOJvU"
+      },
+      "snippet": {
+        "publishedAt": "2019-02-23T05:36:10Z",
+        "channelId": "UC3Xp3dkha2T2-OpJsatQZuA",
+        "title": "신생아 재우기 백색소음 쉬~소리 (10시간 연속재생) white noise",
+        "description": "신생아 잠재우기 어렵지 않아요. 바로 백색소음 쉬~~ 소리면 금방 잠들거든요. 하지만 매번 재울때마다 입으로 쉬소리 내는거 너무 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/NBY6JusOJvU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/NBY6JusOJvU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/NBY6JusOJvU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "이솔TV",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-02-23T05:36:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "uAP3sr7cHoyEZpTBKQzGKUtF3QY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "81uRa54kEA4"
+      },
+      "snippet": {
+        "publishedAt": "2022-07-03T14:23:05Z",
+        "channelId": "UCCQ7MBz4nWAchFLb_n22sDg",
+        "title": "울음뚝 바로꿀잠 I 빗소리 쉬소리 I 수면백색소음 I 10시간연속 광고없음",
+        "description": "저희 아기 수면교육용으로 제작한 음원입니다. 모든 엄마 아빠들 힘내세요 :) Ps. 저희 가족도 습관이 되어 틀어놓고 함께 꿀잠잡니다.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/81uRa54kEA4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/81uRa54kEA4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/81uRa54kEA4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "TSoE (The Sound of Everything)",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-07-03T14:23:05Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "dw4bKVEN5s7an_XPfLVk_Eci9HQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "45hNlG3JtpQ"
+      },
+      "snippet": {
+        "publishedAt": "2022-07-01T14:10:04Z",
+        "channelId": "UCFpzICDz0Q0rgE56qLfEMrg",
+        "title": "[Original] 신생아 자장가 엄마뱃속 소리 + 쉬~소리 백색소음 (10시간) | 자궁소리 ASMR과 그림영상",
+        "description": "[중간광고 X 10시간 연속재생] 높은 음질의 엄마뱃속 소리와 쉬~소리를 함께 담은 10시간 연속재생 백색소음입니다. 신생아 자장가를 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/45hNlG3JtpQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/45hNlG3JtpQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/45hNlG3JtpQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "레드제이",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-07-01T14:10:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "_1SaJx0iO4nh1mSwvtcV7Fx32Wo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "X8Aj4x53NWY"
+      },
+      "snippet": {
+        "publishedAt": "2022-06-30T03:28:46Z",
+        "channelId": "UCFpzICDz0Q0rgE56qLfEMrg",
+        "title": "[Original] 빗소리 asmr 10시간 + 쉬~소리 | 불면증 | 수면유도 | 백색소음 | 아기재우는 소리와 드라이브 영상",
+        "description": "[중간광고 X 10시간 연속재생] 저희 아기에게 들려주기 위해 녹음한 높은 음질의 빗소리와 쉬~소리를 함께 담은 10시간 연속 재생 백색 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/X8Aj4x53NWY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/X8Aj4x53NWY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/X8Aj4x53NWY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "레드제이",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-06-30T03:28:46Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "YMH1fzIyPwY5ZE2wSlm9oBtONtA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "L64t6tuJBXw"
+      },
+      "snippet": {
+        "publishedAt": "2018-07-05T11:30:00Z",
+        "channelId": "UCNutb8i-Mddo0Jnj6V8axpQ",
+        "title": "흰색 소음기 전용 제트기 - 수면 또는 비행기 안에서 공부하는 비행기 소리 - 10 시간 동안 비행기 소음",
+        "description": "흰색 소음기 전용 제트기 - 수면 또는 비행기 안에서 공부하는 비행기 소리 - 10 시간 동안 비행기 소음 흰색 소음기 전용 제트기 - 수면 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/L64t6tuJBXw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/L64t6tuJBXw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/L64t6tuJBXw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Rain in the forest숲속의 비소리 새소리",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-07-05T11:30:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "8LJQrE2gQujMVma1kE7HZ3lq61E",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "7zO6itVsvP4"
+      },
+      "snippet": {
+        "publishedAt": "2022-08-03T10:28:43Z",
+        "channelId": "UC2m30-5KvDn_p3jafegQZlA",
+        "title": "3시간 동안 공부만 하게 해드립니다｜빗소리 ASMR☔ 【motemote｜모트모트｜공부할 때】",
+        "description": "【motemote】 ⏰: 10분마다 원이 완성됩니다 ⚪: 쉬는시간에는 원이 줄어듭니다 ￣ 1분에서 10분으로 10분에서 1시간으로 1 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7zO6itVsvP4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7zO6itVsvP4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7zO6itVsvP4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "모트모트TV",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-08-03T10:28:43Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "I83Hi7cpvZeAgODrRLohKihl1Ok",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "-ZXkx6CUVX8"
+      },
+      "snippet": {
+        "publishedAt": "2022-02-14T10:30:01Z",
+        "channelId": "UC_0X20s5VVUQJllk_S3FCPQ",
+        "title": "신생아 백색소음 자장가, 엄마 자궁 뱃속 소리  완벽재현 , 심장박동 + 쉬~소리 백색소음 (10시간연속듣기) ,Womb Sound with Shhh by 힐링메이트",
+        "description": "신생아백색소음#백색소음신생아#신생아수면음악 신생아 백색소음 자장가, 엄마 자궁 뱃속 소리 완벽재현 , 심장박동 + 쉬~소리 백색 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/-ZXkx6CUVX8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/-ZXkx6CUVX8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/-ZXkx6CUVX8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "HealingMate  - Dog Music 힐링메이트 ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-02-14T10:30:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "PtOKPrbf9mgBwReujA6mmDIN_5s",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "DZ7VlPS2R78"
+      },
+      "snippet": {
+        "publishedAt": "2023-01-10T06:28:43Z",
+        "channelId": "UCfn_Pt9pMPUj8kG9Hynry0Q",
+        "title": "12시간 수면 백색소음 🌙 바로 잠드는 쉬소리 🎧 음악치료 연구자료 | 물소리  빗소리 ASMR | 플로우스케이프 제작영상",
+        "description": "신생아 백색소음 아기 및 성인 청력 보호 | 귀가 아프지 않은 ㅅㅡㆍㅣㅅ소리 | 불면증 음악치료 / 수면 관련 전문가와 함께 제작한 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/DZ7VlPS2R78/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/DZ7VlPS2R78/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/DZ7VlPS2R78/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Safe Sound Korea",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-01-10T06:28:43Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "a0u564SfW0uoFIxToewO19D3qhM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "-MYlAYSBgws"
+      },
+      "snippet": {
+        "publishedAt": "2022-07-26T14:35:49Z",
+        "channelId": "UCutXds-z2lDbTNYgRoTAhzw",
+        "title": "아기엄마가 직접 만든 백색소음(쉿소리,빗소리) ASMR_광고X_낮잠용(2시간)",
+        "description": "80일 된 둘째 아기 육아하면서 필요에의해(?) 만든 낮잠 맞춤형 백색소음입니다. 맘마먹고 1시간 놀고, 스와들업입히고 쪽쪽이물리고 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/-MYlAYSBgws/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/-MYlAYSBgws/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/-MYlAYSBgws/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "똥손마밍",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-07-26T14:35:49Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "BkSMsnCR8PNk7c1d2C76x6Bez0A",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "InZ_XAs0-nM"
+      },
+      "snippet": {
+        "publishedAt": "2016-09-26T01:15:11Z",
+        "channelId": "UCQi7WoZ82_vYnPJaqEmMrEg",
+        "title": "서울대학교 도서관 백색소음 2시간",
+        "description": "안녕하세요. J입니다 이 소리는 서울대학교 도서관 30분 버전을 반복해서 만든 2시간 버전의 백색소음입니다. 녹음기를 가지고 처음 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/InZ_XAs0-nM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/InZ_XAs0-nM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/InZ_XAs0-nM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "백색소음",
+        "liveBroadcastContent": "none",
+        "publishTime": "2016-09-26T01:15:11Z"
+      }
+    }
+  ]
+}
