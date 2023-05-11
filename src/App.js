@@ -8,6 +8,7 @@ import ListsDetail from "./routes/ListsDetail";
 import Auth from "./components/Auth";
 import { useState } from "react";
 import MyPage from "./routes/MyPage";
+import BookmarkDetail from "./routes/BookmarkDetail";
 
 function App() {
   const [user, setUser] = useState({});
@@ -30,6 +31,10 @@ function App() {
           <Route
             path="/lists/detail/:videoId"
             element={<ListsDetail user={user} />}
+          />
+          <Route
+            path="/lists/bookmarkDetail/:videoId"
+            element={<BookmarkDetail user={user} />}
           />
           <Route path="/oauth/kakao/callback" element={<Auth />} />
           <Route
