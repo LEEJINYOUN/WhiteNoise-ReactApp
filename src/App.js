@@ -27,7 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/lists" element={<Lists user={user} />} />
-          <Route path="/lists/:keyword" element={<Lists />} />
+          <Route path="/lists/:keyword" element={<Lists user={user} />} />
           <Route
             path="/lists/detail/:videoId"
             element={<ListsDetail user={user} />}
