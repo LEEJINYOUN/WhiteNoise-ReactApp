@@ -28,7 +28,10 @@ function App() {
           <Route path="/lists" element={<Lists />} />
           <Route path="/lists/:keyword" element={<Lists />} />
           <Route path="/lists/detail/:videoId" element={<ListsDetail />} />
-          <Route path="/oauth/kakao/callback" element={<Auth />} />
+          <Route
+            path="/oauth/kakao/callback"
+            element={<Auth setUser={setUser} />}
+          />
           <Route
             path="/login"
             element={<Login user={user} setUser={setUser} />}
