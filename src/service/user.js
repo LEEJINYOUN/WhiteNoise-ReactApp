@@ -57,3 +57,37 @@ export async function getBookmarks({ email }) {
     `
   );
 }
+
+export async function bookmarkCheck({
+  email,
+  id,
+  videoId,
+  thumbnails,
+  title,
+  channelTitle,
+  publishedAt,
+}) {
+  return client
+    .fetch(
+      `*[_type == "user" && email == "${email}"][0]{
+      "bookmarks" : "${videoId}" in bookmarks[].videoId}
+    `
+    )
+    .then((res) =>
+      res.bookmarks === false || res.bookmarks === null
+        ? addBookmark({
+            id,
+            videoId,
+            thumbnails,
+            title,
+            channelTitle,
+            publishedAt,
+          })
+        : window.confirm("이미 추가된 컨텐츠입니다. 삭제하시겠습니까?")
+        ? removeBookmark({
+            id,
+            videoId,
+          })
+        : null
+    );
+}

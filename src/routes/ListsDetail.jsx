@@ -1,12 +1,13 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { AiOutlineHeart } from "react-icons/ai";
+import { bookmarkCheck } from "../service/user";
 
 export default function ListsDetail() {
   const {
     state: { list },
   } = useLocation();
   const { title } = list.snippet;
+  const user = JSON.parse(localStorage.getItem("userInfo"));
   return (
     <section className="flex flex-col w-10/12 md:w-8/12 lg:w-6/12">
       <iframe
@@ -21,9 +22,23 @@ export default function ListsDetail() {
         <h2 className="text-sm md:text-base lg:text-lg font-bold">{title}</h2>
         <button
           className="text-2xl cursor-pointer"
-          onClick={() => console.log("클릭")}
+          onClick={() => {
+            if (localStorage.getItem("userInfo") === null) {
+              alert("먼저 로그인해주세요.");
+            } else {
+              bookmarkCheck({
+                email: user.email,
+                id: user.id,
+                videoId: list.id.videoId,
+                thumbnails: list.snippet.thumbnails.medium.url,
+                title: list.snippet.title,
+                channelTitle: list.snippet.channelTitle,
+                publishedAt: list.snippet.publishedAt,
+              });
+            }
+          }}
         >
-          <AiOutlineHeart />
+          추가
         </button>
       </div>
     </section>
