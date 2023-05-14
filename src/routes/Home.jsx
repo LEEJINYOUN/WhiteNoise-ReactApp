@@ -5,9 +5,10 @@ import "aos/dist/aos.css";
 
 export default function Home() {
   const ref = useRef(null);
-  const onClick = () => {
+  const detailBtn = () => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
+  const spanStyle = "text-red-500 font-bold";
   Aos.init({
     duration: 1800,
     offset: 0,
@@ -34,13 +35,13 @@ export default function Home() {
               data-aos="fade-left"
               data-aos-delay="400"
             >
-              착한 화이트노이즈
+              건강한 화이트노이즈
             </h1>
             <button
               className="m-auto my-6 py-3 w-[100px] md:w-[120px] bg-white text-black font-bold hover:bg-sky-700 hover:text-white"
               data-aos="zoom-in"
               data-aos-delay="700"
-              onClick={onClick}
+              onClick={detailBtn}
             >
               자세히
             </button>
@@ -56,7 +57,7 @@ export default function Home() {
               data-aos-delay="50"
               data-aos-offset="40"
             >
-              화이트 노이즈란?
+              화이트 노이즈
             </h1>
             <p
               className="font-medium text-sm md:text-lg lg:text-xl"
@@ -64,10 +65,10 @@ export default function Home() {
               data-aos-delay="50"
               data-aos-offset="150"
             >
-              음폭이 넒어 공해에 해당하지 않는 소음입니다. "흰 빛"과 같은 형태의
-              주파수 형태를 띠기 때문에 '백색소음' 또는 '화이트 노이즈'라고
-              불립니다. 인간 뇌파의 알파파를 동조시켜 심리적 안정을 불러오거나
-              수면을 촉진하는 효과가 있습니다.
+              <span className={spanStyle}>백색 소음</span>
+              이라고도 불리우며, 파도 · 모닥불 · 시냇물 등과 같이 자연속에서
+              흔히 들을 수 있는 소음입니다. 심리적 안정을 불러오거나 집중력을
+              향상시키기 때문에 공부나 일을 하면서 듣는 것을 추천합니다.
             </p>
           </div>
         </div>

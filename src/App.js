@@ -7,7 +7,7 @@ import Login from "./routes/Login";
 import ListsDetail from "./routes/ListsDetail";
 import Auth from "./components/Auth";
 import { useState } from "react";
-import MyPage from "./routes/Mypage";
+import MyPage from "./routes/MyPage";
 
 function App() {
   const [user, setUser] = useState({});
@@ -28,10 +28,7 @@ function App() {
           <Route path="/lists" element={<Lists />} />
           <Route path="/lists/:keyword" element={<Lists />} />
           <Route path="/lists/detail/:videoId" element={<ListsDetail />} />
-          <Route
-            path="/oauth/kakao/callback"
-            element={<Auth setUser={setUser} />}
-          />
+          <Route path="/oauth/kakao/callback" element={<Auth />} />
           <Route
             path="/login"
             element={<Login user={user} setUser={setUser} />}
