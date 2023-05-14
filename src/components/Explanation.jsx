@@ -20,7 +20,7 @@ export default function Explanation({ detailRef }) {
             data-aos-offset="150"
           >
             <span className="text-red-500 font-bold">백색 소음</span>
-            이라고도 불리우며, 파도 · 모닥불 · 시냇물 등과 같이 자연속에서 흔히
+            이라고도 불리며, 파도 · 모닥불 · 시냇물 등과 같이 자연속에서 흔히
             들을 수 있는 소음입니다. 심리적 안정을 불러오거나 집중력을
             향상시키기 때문에 공부나 일을 하면서 듣는 것을 추천합니다.
           </p>

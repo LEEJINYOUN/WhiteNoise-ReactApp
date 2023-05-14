@@ -30,23 +30,24 @@ export default function Auth({ setUser }) {
           name: data.properties.nickname,
           image: data.properties.profile_image,
           email: data.properties.nickname,
-          username: data.properties.nickname,
+          password: null,
+          nickname: data.properties.nickname,
         });
         let userObject = {
           id: String(data.id),
           name: data.properties.nickname,
           image: data.properties.profile_image,
           email: data.properties.nickname,
-          username: data.properties.nickname,
+          nickname: data.properties.nickname,
         };
         setUser(userObject);
         localStorage.setItem("userInfo", JSON.stringify(userObject));
         navigate("/");
       } catch (err) {
-        console.log(err);
+        console.log(err, "에러 발생!");
       }
     } catch (err) {
-      console.log(err);
+      console.log(err, "에러 발생!");
     }
   };
   useEffect(() => {

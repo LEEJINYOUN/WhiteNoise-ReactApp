@@ -4,8 +4,8 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Username',
-      name: 'username',
+      title: 'Nickname',
+      name: 'nickname',
       type: 'string',
     },
     {
@@ -16,6 +16,11 @@ export default {
     {
       title: 'Email',
       name: 'email',
+      type: 'string',
+    },
+    {
+      title: 'Password',
+      name: 'password',
       type: 'string',
     },
     {
@@ -45,7 +50,7 @@ export default {
   preview: {
     select: {
       title: 'name',
-      subtitle: 'username',
+      subtitle: 'nickname',
     },
   },
 }

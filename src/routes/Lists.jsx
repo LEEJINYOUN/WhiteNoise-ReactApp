@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
 import SearchForm from "../components/SearchForm";
 import Caution from "../components/Caution";
 import GetLists from "../components/GetLists";

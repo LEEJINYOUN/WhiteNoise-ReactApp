@@ -7,7 +7,7 @@ import Login from "./routes/Login";
 import ListsDetail from "./routes/ListsDetail";
 import Auth from "./components/Auth";
 import { useState } from "react";
-import MyPage from "./routes/MyPage";
+import MyPage from "./routes/Mypage";
 import BookmarkDetail from "./routes/BookmarkDetail";
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
       setUser(getLocalData);
     }
   }, [setUser]);
+
   return (
     <section className="w-full overflow-auto mx-auto">
       <header className="sticky top-0 max-w-screen-xl m-auto bg-white z-10 ">
@@ -27,7 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/lists" element={<Lists user={user} />} />
-          <Route path="/lists/:keyword" element={<Lists />} />
+          <Route path="/lists/:keyword" element={<Lists user={user} />} />
           <Route
             path="/lists/detail/:videoId"
             element={<ListsDetail user={user} />}

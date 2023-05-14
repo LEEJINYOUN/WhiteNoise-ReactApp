@@ -2,21 +2,19 @@ import React from "react";
 import { bookmarkCheck } from "../service/user";
 import { AiOutlineCheck } from "react-icons/ai";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+import Youtube from "../api/youtube";
 
 export default function GetLists({
   GET_DATA_COUNT,
-  text,
   keyword,
   navigate,
   bookmark,
   setBookmark,
   user,
 }) {
-  const youtubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${GET_DATA_COUNT}&q=백색소음 ${text}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`;
-  const fakeURL = `/lists/search.json`;
-  const { data: lists } = useQuery(["lists", keyword], async () => {
-    return axios.get(fakeURL).then((res) => res.data.items);
+  const { data: lists } = useQuery(["lists", keyword], () => {
+    const youtube = new Youtube();
+    return youtube.search(keyword, GET_DATA_COUNT);
   });
   return (
     <div className="my-5">
@@ -29,7 +27,7 @@ export default function GetLists({
                 src={list.snippet.thumbnails.medium.url}
                 alt={list.snippet.title}
                 onClick={() => {
-                  navigate(`/lists/detail/${list.id.videoId}`, {
+                  navigate(`/lists/detail/${list.id}`, {
                     state: { list },
                   });
                 }}
@@ -38,7 +36,7 @@ export default function GetLists({
                 <p
                   className="cursor-pointer font-semibold text-base my-2 line-clamp-2"
                   onClick={() => {
-                    navigate(`/lists/detail/${list.id.videoId}`, {
+                    navigate(`/lists/detail/${list.id}`, {
                       state: { list },
                     });
                   }}
@@ -64,7 +62,7 @@ export default function GetLists({
                         bookmarkCheck({
                           email: user.email,
                           id: user.id,
-                          videoId: list.id.videoId,
+                          videoId: list.id,
                           thumbnails: list.snippet.thumbnails.medium.url,
                           title: list.snippet.title,
                           channelTitle: list.snippet.channelTitle,

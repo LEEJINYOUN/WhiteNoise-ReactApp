@@ -14,7 +14,7 @@ export default function ListsDetail({ user }) {
         className="m-auto mt-3 w-full h-[300px] md:h-[350px] lg:h-[400px]"
         id="player"
         type="text/html"
-        src={`http://www.youtube.com/embed/${list.id.videoId}`}
+        src={`http://www.youtube.com/embed/${list.id}`}
         frameBorder="0"
         title={title}
       />
@@ -31,7 +31,7 @@ export default function ListsDetail({ user }) {
                 bookmarkCheck({
                   email: user.email,
                   id: user.id,
-                  videoId: list.id.videoId,
+                  videoId: list.id,
                   thumbnails: list.snippet.thumbnails.medium.url,
                   title: list.snippet.title,
                   channelTitle: list.snippet.channelTitle,
