@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
+import { addUser } from "../service/user";
 
 export default function Auth({ setUser }) {
   const navigate = useNavigate();
@@ -24,10 +25,19 @@ export default function Auth({ setUser }) {
         let data = await window.Kakao.API.request({
           url: "/v2/user/me",
         });
-        let userObject = {
-          id: data.id,
+        addUser({
+          id: String(data.id),
           name: data.properties.nickname,
-          photo: data.properties.profile_image,
+          image: data.properties.profile_image,
+          email: data.properties.nickname,
+          username: data.properties.nickname,
+        });
+        let userObject = {
+          id: String(data.id),
+          name: data.properties.nickname,
+          image: data.properties.profile_image,
+          email: data.properties.nickname,
+          username: data.properties.nickname,
         };
         setUser(userObject);
         localStorage.setItem("userInfo", JSON.stringify(userObject));
