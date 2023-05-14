@@ -10,7 +10,6 @@ export default function BookmarkLists({ user }) {
     return getBookmarks({ email: user.email }).then((res) => res);
   });
   const navigate = useNavigate();
-
   return (
     <div className="mx-5 xl:m-0">
       <h2 className="m-auto pb-5 text-xl font-bold">즐겨찾기</h2>
