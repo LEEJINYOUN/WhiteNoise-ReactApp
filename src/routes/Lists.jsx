@@ -116,6 +116,10 @@ export default function Lists() {
                             addBookmark({
                               id: user.id,
                               videoId: list.id.videoId,
+                              thumbnails: list.snippet.thumbnails.medium.url,
+                              title: list.snippet.title,
+                              channelTitle: list.snippet.channelTitle,
+                              publishedAt: list.snippet.publishedAt,
                             });
                           } else {
                             removeBookmark({

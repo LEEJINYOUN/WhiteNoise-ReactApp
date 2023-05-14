@@ -12,11 +12,28 @@ export async function addUser({ id, username, name, email, image }) {
   });
 }
 
-export async function addBookmark({ id, videoId }) {
+export async function addBookmark({
+  id,
+  videoId,
+  thumbnails,
+  title,
+  channelTitle,
+  publishedAt,
+}) {
   return client
     .patch(id)
     .setIfMissing({ bookmarks: [] })
-    .append("bookmarks", [{ _id: videoId, videoId, _type: "object" }])
+    .append("bookmarks", [
+      {
+        _id: videoId,
+        videoId,
+        thumbnails,
+        title,
+        channelTitle,
+        publishedAt,
+        _type: "object",
+      },
+    ])
     .commit({ autoGenerateArrayKeys: true })
     .then((update) => {
       console.log(update);
