@@ -35,8 +35,8 @@ export async function addBookmark({
       },
     ])
     .commit({ autoGenerateArrayKeys: true })
-    .then((update) => {
-      console.log(update);
+    .then(() => {
+      alert("즐겨찾기에 추가했습니다.");
     });
 }
 
@@ -45,8 +45,8 @@ export async function removeBookmark({ id, videoId }) {
     .patch(id)
     .unset([`bookmarks[_id=="${videoId}"]`])
     .commit()
-    .then((unset) => {
-      console.log(unset);
+    .then(() => {
+      alert("즐겨찾기에서 삭제했습니다.");
     });
 }
 
