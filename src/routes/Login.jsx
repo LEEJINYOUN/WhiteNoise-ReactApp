@@ -48,7 +48,7 @@ export default function Login({ user, setUser }) {
     },
   });
   const btnStyle =
-    "my-2 px-4 py-2 w-[200px] rounded-lg font-bold cursor-pointer";
+    "cursor-pointer border border-gray-300 rounded-full mx-3 w-[45px] h-[45px]";
   return (
     <section className="w-full h-[90vh]">
       {Object.keys(user).length === 0 && (
@@ -57,17 +57,14 @@ export default function Login({ user, setUser }) {
             로그인
           </h2>
           <div className="flex justify-center items-center my-7">
-            <button
-              className="cursor-pointer border border-gray-300 rounded-full mx-3 w-[45px] h-[45px]"
-              onClick={googleLogin}
-            >
+            <button className={btnStyle} onClick={googleLogin}>
               <img
                 className="flex justify-center m-auto w-[25px] h-[25px]"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/882px-Google_%22G%22_Logo.svg.png"
                 alt="googleLogo"
               />
             </button>
-            <button className="cursor-pointer border border-gray-300 rounded-full mx-3 w-[45px] h-[45px]">
+            <button className={btnStyle}>
               <Link to={KAKAO_AUTH_URL}>
                 <img
                   className="flex justify-center m-auto w-full h-full"
