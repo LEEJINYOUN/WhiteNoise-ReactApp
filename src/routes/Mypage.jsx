@@ -1,5 +1,5 @@
 import React from "react";
-import { getBookmarks } from "../service/user";
+import { getBookmarks, removeBookmark } from "../service/user";
 import { useQuery } from "@tanstack/react-query";
 
 export default function MyPage() {
@@ -26,6 +26,16 @@ export default function MyPage() {
                 <p>{item.channelTitle}</p>
                 <p>{item.publishedAt.slice(0, 10)}</p>
               </div>
+              <button
+                onClick={() => {
+                  removeBookmark({
+                    id: user.id,
+                    videoId: item.videoId,
+                  });
+                }}
+              >
+                삭제
+              </button>
             </li>
           ))}
         </ul>
