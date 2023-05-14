@@ -3,7 +3,7 @@ import axios from "axios";
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
 
-export default function Auth() {
+export default function Auth({ setUser }) {
   const navigate = useNavigate();
   const getToken = async () => {
     const payload = qs.stringify({
@@ -20,7 +20,21 @@ export default function Auth() {
       );
       window.Kakao.init(process.env.REACT_APP_KAKAO_REST_API_KEY);
       window.Kakao.Auth.setAccessToken(res.data.access_token);
-      navigate("/KakaoProfile");
+      try {
+        let data = await window.Kakao.API.request({
+          url: "/v2/user/me",
+        });
+        let userObject = {
+          id: data.id,
+          name: data.properties.nickname,
+          photo: data.properties.profile_image,
+        };
+        setUser(userObject);
+        localStorage.setItem("userInfo", JSON.stringify(userObject));
+        navigate("/");
+      } catch (err) {
+        console.log(err);
+      }
     } catch (err) {
       console.log(err);
     }

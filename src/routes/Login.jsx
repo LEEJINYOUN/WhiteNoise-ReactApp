@@ -26,7 +26,7 @@ export default function Login({ user, setUser }) {
         };
         setUser(userObject);
         localStorage.setItem("userInfo", JSON.stringify(userObject));
-        navigate("/GoogleProfile");
+        navigate("/");
       } catch (err) {
         console.log(err);
       }
