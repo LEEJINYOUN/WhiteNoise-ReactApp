@@ -29,7 +29,8 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'string',
+          type: 'object',
+          fields: [{type: 'string', name: 'videoId'}],
         },
       ],
       validation: (Rule) => Rule.unique(),

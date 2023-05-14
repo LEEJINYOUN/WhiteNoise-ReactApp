@@ -8,6 +8,7 @@ import {
   AiOutlineHeart,
   AiFillHeart,
 } from "react-icons/ai";
+import { addBookmark, removeBookmark } from "../service/user";
 
 const words = ["파도", "풀벌레", "모닥불", "비"];
 const GET_DATA_COUNT = 10;
@@ -37,6 +38,7 @@ export default function Lists() {
   };
 
   const [liked, setLiked] = useState(Array(GET_DATA_COUNT).fill(false));
+  const user = JSON.parse(localStorage.getItem("userInfo"));
 
   useEffect(() => {
     setText(keyword || "");
@@ -110,6 +112,17 @@ export default function Lists() {
                           let likeArray = [...liked];
                           likeArray[key] = !likeArray[key];
                           setLiked(likeArray);
+                          if (likeArray[key] === true) {
+                            addBookmark({
+                              id: user.id,
+                              videoId: list.id.videoId,
+                            });
+                          } else {
+                            removeBookmark({
+                              id: user.id,
+                              videoId: list.id.videoId,
+                            });
+                          }
                         }
                       }}
                     >
