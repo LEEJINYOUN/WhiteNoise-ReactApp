@@ -3,12 +3,11 @@ import { useLocation } from "react-router-dom";
 import { bookmarkCheck } from "../service/user";
 import { AiOutlineCheck } from "react-icons/ai";
 
-export default function ListsDetail() {
+export default function ListsDetail({ user }) {
   const {
     state: { list },
   } = useLocation();
   const { title, publishedAt } = list.snippet;
-  const user = JSON.parse(localStorage.getItem("userInfo"));
   return (
     <section className="flex flex-col w-10/12 md:w-8/12 lg:w-6/12">
       <iframe

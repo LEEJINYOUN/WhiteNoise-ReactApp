@@ -25,9 +25,12 @@ function App() {
       <main className="w-full flex justify-center min-h-full">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/lists" element={<Lists />} />
+          <Route path="/lists" element={<Lists user={user} />} />
           <Route path="/lists/:keyword" element={<Lists />} />
-          <Route path="/lists/detail/:videoId" element={<ListsDetail />} />
+          <Route
+            path="/lists/detail/:videoId"
+            element={<ListsDetail user={user} />}
+          />
           <Route
             path="/oauth/kakao/callback"
             element={<Auth setUser={setUser} />}
