@@ -112,7 +112,7 @@ export async function emailSignUpCheck({ email, password, name, username }) {
     );
 }
 
-export async function getEmailLogin({ email, setUser }) {
+export async function getEmailLogin({ email, setUser, navigate }) {
   return client
     .fetch(`*[_type == "user" && email == "${email}"][0]`)
     .then((res) => {
@@ -125,11 +125,11 @@ export async function getEmailLogin({ email, setUser }) {
       };
       setUser(userObject);
       localStorage.setItem("userInfo", JSON.stringify(userObject));
-      alert("로그인 성공했습니다.");
+      navigate("/");
     });
 }
 
-export async function emailLogin({ email, password, setUser }) {
+export async function emailLogin({ email, password, setUser, navigate }) {
   return client
     .fetch(
       `*[_type == "user" && email == "${email}"][0]{"password" : password == "${password}"}`
@@ -137,6 +137,6 @@ export async function emailLogin({ email, password, setUser }) {
     .then((res) =>
       res.password === false
         ? alert("비밀번호가 다릅니다")
-        : getEmailLogin({ email, setUser })
+        : getEmailLogin({ email, setUser, navigate })
     );
 }

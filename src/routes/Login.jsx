@@ -99,6 +99,7 @@ export default function Login({ user, setUser }) {
       email: loginEmail,
       password: String(loginPassword),
       setUser,
+      navigate,
     });
   };
   return (
