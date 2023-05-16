@@ -94,13 +94,45 @@ export async function bookmarkCheck({
     );
 }
 
-export async function emailSignUpCheck({ email, password, name, nickname }) {
+export async function addEmailUser({
+  id,
+  nickname,
+  name,
+  email,
+  password,
+  image,
+  setAccount,
+}) {
+  return client
+    .createIfNotExists({
+      _id: id,
+      _type: "user",
+      nickname,
+      name,
+      email,
+      password,
+      image,
+      bookmarks: [],
+    })
+    .then(() => {
+      alert("계정이 생성되었습니다.");
+      setAccount(false);
+    });
+}
+
+export async function emailSignUpCheck({
+  email,
+  password,
+  name,
+  nickname,
+  setAccount,
+}) {
   return client
     .fetch(`*[_type == "user" && email == "${email}"][0]`)
     .then((res) =>
       res !== null
         ? alert("존재하는 아이디입니다.")
-        : addUser({
+        : addEmailUser({
             id: uuidv4(),
             nickname,
             name,
@@ -108,6 +140,7 @@ export async function emailSignUpCheck({ email, password, name, nickname }) {
             password,
             image:
               "http://www.fao.org/fileadmin/templates/experts-feed-safety/images/profile-img03.jpg",
+            setAccount,
           })
     );
 }

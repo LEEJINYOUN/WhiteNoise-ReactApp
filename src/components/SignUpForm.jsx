@@ -27,14 +27,13 @@ export default function SignUpForm({ account, setAccount, accountChange }) {
       password: String(signUpPassword),
       name: signUpName,
       nickname: signUpNickname,
+      setAccount,
     });
     setTimeout(() => {
       setSignUpEmail("");
       setSignUpPassword("");
       setSignUpName("");
       setSignUpNickname("");
-      alert("계정이 생성되었습니다.");
-      setAccount(false);
     }, 1000);
   };
 
