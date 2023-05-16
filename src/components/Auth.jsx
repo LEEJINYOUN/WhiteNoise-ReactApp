@@ -25,7 +25,6 @@ export default function Auth({ setUser }) {
         let data = await window.Kakao.API.request({
           url: "/v2/user/me",
         });
-        console.log(data);
         addUser({
           id: String(data.id),
           name: data.properties.nickname,
