@@ -2,7 +2,6 @@ import React from "react";
 import { bookmarkCheck } from "../service/user";
 import { AiOutlineCheck } from "react-icons/ai";
 import { useQuery } from "@tanstack/react-query";
-import FakeYoutube from "../api/fakeYoutube";
 import Youtube from "../api/youtube";
 
 export default function GetLists({
@@ -14,9 +13,8 @@ export default function GetLists({
   user,
 }) {
   const { data: lists } = useQuery(["lists", keyword], () => {
-    const fakeYoutube = new FakeYoutube();
     const youtube = new Youtube();
-    return fakeYoutube.search(keyword, GET_DATA_COUNT);
+    return youtube.search(keyword, GET_DATA_COUNT);
   });
   return (
     <div className="my-5">

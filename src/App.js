@@ -18,6 +18,7 @@ function App() {
       setUser(getLocalData);
     }
   }, [setUser]);
+
   return (
     <section className="w-full overflow-auto mx-auto">
       <header className="sticky top-0 max-w-screen-xl m-auto bg-white z-10 ">
