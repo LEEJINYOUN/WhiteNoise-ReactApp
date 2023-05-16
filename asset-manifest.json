@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/WhiteNoise-ReactApp/static/css/main.69c163f6.css",
-    "main.js": "/WhiteNoise-ReactApp/static/js/main.38d4ebd7.js",
+    "main.js": "/WhiteNoise-ReactApp/static/js/main.03344b9d.js",
     "static/js/726.f5352d80.chunk.js": "/WhiteNoise-ReactApp/static/js/726.f5352d80.chunk.js",
     "index.html": "/WhiteNoise-ReactApp/index.html",
     "main.69c163f6.css.map": "/WhiteNoise-ReactApp/static/css/main.69c163f6.css.map",
-    "main.38d4ebd7.js.map": "/WhiteNoise-ReactApp/static/js/main.38d4ebd7.js.map",
+    "main.03344b9d.js.map": "/WhiteNoise-ReactApp/static/js/main.03344b9d.js.map",
     "726.f5352d80.chunk.js.map": "/WhiteNoise-ReactApp/static/js/726.f5352d80.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.69c163f6.css",
-    "static/js/main.38d4ebd7.js"
+    "static/js/main.03344b9d.js"
   ]
 }
