@@ -31,14 +31,14 @@ export default function Auth({ setUser }) {
           image: data.properties.profile_image,
           email: data.properties.nickname,
           password: null,
-          username: data.properties.nickname,
+          nickname: data.properties.nickname,
         });
         let userObject = {
           id: String(data.id),
           name: data.properties.nickname,
           image: data.properties.profile_image,
           email: data.properties.nickname,
-          username: data.properties.nickname,
+          nickname: data.properties.nickname,
         };
         setUser(userObject);
         localStorage.setItem("userInfo", JSON.stringify(userObject));

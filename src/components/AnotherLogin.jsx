@@ -28,7 +28,7 @@ export default function AnotherLogin({ setUser, navigate }) {
           image: res.data.picture,
           email: res.data.email,
           password: null,
-          username: res.data.email.split("@")[0],
+          nickname: res.data.email.split("@")[0],
         });
 
         let userObject = {
@@ -36,7 +36,7 @@ export default function AnotherLogin({ setUser, navigate }) {
           name: res.data.name,
           image: res.data.picture,
           email: res.data.email,
-          username: res.data.email.split("@")[0],
+          nickname: res.data.email.split("@")[0],
         };
         setUser(userObject);
         localStorage.setItem("userInfo", JSON.stringify(userObject));

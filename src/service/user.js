@@ -1,11 +1,11 @@
 import { client } from "./sanity";
 import { v4 as uuidv4 } from "uuid";
 
-export async function addUser({ id, username, name, email, password, image }) {
+export async function addUser({ id, nickname, name, email, password, image }) {
   return client.createIfNotExists({
     _id: id,
     _type: "user",
-    username,
+    nickname,
     name,
     email,
     password,
@@ -94,7 +94,7 @@ export async function bookmarkCheck({
     );
 }
 
-export async function emailSignUpCheck({ email, password, name, username }) {
+export async function emailSignUpCheck({ email, password, name, nickname }) {
   return client
     .fetch(`*[_type == "user" && email == "${email}"][0]`)
     .then((res) =>
@@ -102,7 +102,7 @@ export async function emailSignUpCheck({ email, password, name, username }) {
         ? alert("존재하는 아이디입니다.")
         : addUser({
             id: uuidv4(),
-            username,
+            nickname,
             name,
             email,
             password,
@@ -121,7 +121,7 @@ export async function getEmailLogin({ email, setUser, navigate }) {
         name: res.name,
         image: res.image,
         email: res.email,
-        username: res.email.split("@")[0],
+        nickname: res.email.split("@")[0],
       };
       setUser(userObject);
       localStorage.setItem("userInfo", JSON.stringify(userObject));

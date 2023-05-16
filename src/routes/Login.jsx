@@ -26,7 +26,11 @@ export default function Login({ user, setUser }) {
               setUser={setUser}
               accountChange={accountChange}
             />
-            <SignUpForm account={account} accountChange={accountChange} />
+            <SignUpForm
+              account={account}
+              setAccount={setAccount}
+              accountChange={accountChange}
+            />
             <AnotherLogin setUser={setUser} navigate={navigate} />
           </div>
         </>

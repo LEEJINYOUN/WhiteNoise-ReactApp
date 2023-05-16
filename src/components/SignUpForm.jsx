@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { emailSignUpCheck } from "../service/user";
 
-export default function SignUpForm({ account, accountChange }) {
+export default function SignUpForm({ account, setAccount, accountChange }) {
   const [signUpEmail, setSignUpEmail] = useState("");
   const [signUpPassword, setSignUpPassword] = useState("");
   const [signUpName, setSignUpName] = useState("");
-  const [signUpUsername, setSignUpUsername] = useState("");
+  const [signUpNickname, setSignUpNickname] = useState("");
   const signUpOnChange = (e) => {
     const {
       target: { name, value },
@@ -16,8 +16,8 @@ export default function SignUpForm({ account, accountChange }) {
       setSignUpPassword(value);
     } else if (name === "name") {
       setSignUpName(value);
-    } else if (name === "username") {
-      setSignUpUsername(value);
+    } else if (name === "nickname") {
+      setSignUpNickname(value);
     }
   };
   const signUpOnSubmit = (e) => {
@@ -26,8 +26,16 @@ export default function SignUpForm({ account, accountChange }) {
       email: signUpEmail,
       password: String(signUpPassword),
       name: signUpName,
-      username: signUpUsername,
+      nickname: signUpNickname,
     });
+    setTimeout(() => {
+      setSignUpEmail("");
+      setSignUpPassword("");
+      setSignUpName("");
+      setSignUpNickname("");
+      alert("계정이 생성되었습니다.");
+      setAccount(false);
+    }, 1000);
   };
 
   return (
@@ -35,9 +43,7 @@ export default function SignUpForm({ account, accountChange }) {
       <h2 className="flex justify-center font-bold text-2xl">회원가입</h2>
       <form className="flex flex-col" onSubmit={signUpOnSubmit}>
         <div className="mt-2 px-3">
-          <label htmlFor="email" className="block text-gray-700">
-            이메일
-          </label>
+          <label className="block text-gray-700">이메일</label>
           <input
             type="email"
             name="email"
@@ -50,9 +56,7 @@ export default function SignUpForm({ account, accountChange }) {
           />
         </div>
         <div className="mt-1 px-3">
-          <label htmlFor="email" className="block text-gray-700">
-            비밀번호
-          </label>
+          <label className="block text-gray-700">비밀번호</label>
           <input
             type="password"
             name="password"
@@ -65,9 +69,7 @@ export default function SignUpForm({ account, accountChange }) {
           />
         </div>
         <div className="my-1 px-3">
-          <label htmlFor="email" className="block text-gray-700">
-            이름
-          </label>
+          <label className="block text-gray-700">이름</label>
           <input
             type="text"
             name="name"
@@ -79,16 +81,14 @@ export default function SignUpForm({ account, accountChange }) {
           />
         </div>
         <div className="my-1 px-3">
-          <label htmlFor="email" className="block text-gray-700">
-            유저이름
-          </label>
+          <label className="block text-gray-700">닉네임</label>
           <input
             type="text"
-            name="username"
-            placeholder="유저이름"
+            name="nickname"
+            placeholder="닉네임"
             required
             className="w-full bg-gray-200 mt-2 px-4 py-1 border focus:border-blue-500 focus:bg-white focus:outline-none rounded-lg"
-            value={signUpUsername}
+            value={signUpNickname}
             onChange={signUpOnChange}
           />
         </div>
