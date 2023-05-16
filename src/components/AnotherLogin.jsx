@@ -30,7 +30,6 @@ export default function AnotherLogin({ setUser, navigate }) {
           password: null,
           nickname: res.data.email.split("@")[0],
         });
-
         let userObject = {
           id: res.data.sub,
           name: res.data.name,
@@ -42,7 +41,7 @@ export default function AnotherLogin({ setUser, navigate }) {
         localStorage.setItem("userInfo", JSON.stringify(userObject));
         navigate("/");
       } catch (err) {
-        console.log(err);
+        console.log(err, "에러 발생!");
       }
     },
   });

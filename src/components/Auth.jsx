@@ -44,10 +44,10 @@ export default function Auth({ setUser }) {
         localStorage.setItem("userInfo", JSON.stringify(userObject));
         navigate("/");
       } catch (err) {
-        console.log(err);
+        console.log(err, "에러 발생!");
       }
     } catch (err) {
-      console.log(err);
+      console.log(err, "에러 발생!");
     }
   };
   useEffect(() => {
