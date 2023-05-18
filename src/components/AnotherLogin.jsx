@@ -2,10 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useGoogleLogin } from "@react-oauth/google";
 import { addUser } from "../service/user";
-import { Link } from "react-router-dom";
 
 export default function AnotherLogin({ setUser, navigate }) {
-  const KaKao_Auth_URl = `https://kauth.kakao.com/oauth/authorize?client_id=${process.env.REACT_APP_KAKAO_REST_API_KEY}&redirect_uri=${process.env.REACT_APP_KAKAO_REDIRECT_URI}&response_type=code`;
   const btnStyle =
     "cursor-pointer border border-gray-300 rounded-full mx-3 w-[45px] h-[45px]";
   const googleLogin = useGoogleLogin({
@@ -58,15 +56,6 @@ export default function AnotherLogin({ setUser, navigate }) {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/882px-Google_%22G%22_Logo.svg.png"
             alt="googleLogo"
           />
-        </button>
-        <button className={btnStyle}>
-          <Link to={KaKao_Auth_URl}>
-            <img
-              className="flex justify-center m-auto w-full h-full"
-              src="http://www.mzuu.co.kr/design/mzuu/btn_kakao.png"
-              alt="KaKaoLogo"
-            />
-          </Link>
         </button>
       </div>
     </div>
