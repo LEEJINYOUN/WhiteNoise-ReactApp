@@ -11,6 +11,7 @@
 - <h3>Sanity.io</h3>
 - <h3>Youtube Api</h3>
 - <h3>Oauth 2.0 (google)</h3>
+- <h3>Tailwind css</h3>
   <br/><br/>
 
 <h2> ⚙️ 구현 기능 </h2>
