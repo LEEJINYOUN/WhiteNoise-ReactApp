@@ -1,4 +1,3 @@
-import React from "react";
 import { getBookmarks, removeBookmark } from "../service/user";
 import { useQuery } from "@tanstack/react-query";
 import { AiOutlineCheck } from "react-icons/ai";
@@ -10,6 +9,12 @@ export default function BookmarkLists({ user }) {
     return getBookmarks({ email: user.email }).then((res) => res);
   });
   const navigate = useNavigate();
+  const goToDetail = (list) => {
+    navigate(`/lists/bookmarkDetail/${list.videoId}`, {
+      state: { list },
+    });
+  };
+
   return (
     <div className="mx-5 xl:m-0">
       <h2 className="m-auto pb-5 text-xl font-bold">즐겨찾기</h2>
@@ -24,9 +29,7 @@ export default function BookmarkLists({ user }) {
                 <h2
                   className="flex justify-center items-center lists-center w-[5%]"
                   onClick={() => {
-                    navigate(`/lists/bookmarkDetail/${list.videoId}`, {
-                      state: { list },
-                    });
+                    goToDetail(list);
                   }}
                 >
                   {key + 1}
@@ -36,17 +39,13 @@ export default function BookmarkLists({ user }) {
                   src={list.thumbnails}
                   alt={list.title}
                   onClick={() => {
-                    navigate(`/lists/bookmarkDetail/${list.videoId}`, {
-                      state: { list },
-                    });
+                    goToDetail(list);
                   }}
                 />
                 <div
                   className="flex flex-col w-[60%] pl-3"
                   onClick={() => {
-                    navigate(`/lists/bookmarkDetail/${list.videoId}`, {
-                      state: { list },
-                    });
+                    goToDetail(list);
                   }}
                 >
                   <p className="my-2">{list.title}</p>

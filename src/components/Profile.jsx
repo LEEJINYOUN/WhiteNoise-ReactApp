@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Profile({ user }) {
   return (
     <div className="m-auto w-full my-5 border-b border-stone-300 flex flex-col">
