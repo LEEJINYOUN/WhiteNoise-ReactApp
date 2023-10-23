@@ -1,12 +1,7 @@
-import React from "react";
+import { SEARCH_KEYWORD } from "../constants/ListsConstant";
 import { AiOutlineSearch, AiOutlineCloseCircle } from "react-icons/ai";
 
-export default function SearchForm({
-  text,
-  setText,
-  SEARCH_KEYWORD,
-  navigate,
-}) {
+export default function SearchForm({ text, setText, navigate }) {
   const onSubmit = (e) => {
     e.preventDefault();
     if (SEARCH_KEYWORD.includes(text)) {
@@ -15,6 +10,7 @@ export default function SearchForm({
       setText("");
     }
   };
+
   return (
     <form
       className="m-auto w-full md:w-10/12 lg:w-8/12 grid gp-10 bg-gray-300 rounded-[10px] p-[3rem]"

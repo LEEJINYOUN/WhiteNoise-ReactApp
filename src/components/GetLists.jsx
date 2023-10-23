@@ -1,21 +1,29 @@
-import React from "react";
-import { bookmarkCheck } from "../service/user";
-import { AiOutlineCheck } from "react-icons/ai";
+import { useState } from "react";
+import { FETCH_DATA_COUNT } from "../constants/ListsConstant";
 import { useQuery } from "@tanstack/react-query";
 import Youtube from "../api/youtube";
+import { bookmarkCheck } from "../service/user";
+import { AiOutlineCheck } from "react-icons/ai";
 
-export default function GetLists({
-  GET_DATA_COUNT,
-  keyword,
-  navigate,
-  bookmark,
-  setBookmark,
-  user,
-}) {
+export default function GetLists({ keyword, navigate, user }) {
+  const [bookmark, setBookmark] = useState(Array(FETCH_DATA_COUNT).fill(false));
   const { data: lists } = useQuery(["lists", keyword], () => {
     const youtube = new Youtube();
-    return youtube.search(keyword, GET_DATA_COUNT);
+    return youtube.search(keyword, FETCH_DATA_COUNT);
   });
+
+  const goToDetail = (list) => {
+    navigate(`/lists/detail/${list.id}`, {
+      state: { list },
+    });
+  };
+
+  const bookmarkChange = (key) => {
+    let bookmarkArray = [...bookmark];
+    bookmarkArray[key] = !bookmarkArray[key];
+    setBookmark(bookmarkArray);
+  };
+
   return (
     <div className="my-5">
       {lists && (
@@ -26,20 +34,12 @@ export default function GetLists({
                 className="w-full cursor-pointer rounded-lg hover:rounded-none ease-out duration-300"
                 src={list.snippet.thumbnails.medium.url}
                 alt={list.snippet.title}
-                onClick={() => {
-                  navigate(`/lists/detail/${list.id}`, {
-                    state: { list },
-                  });
-                }}
+                onClick={() => goToDetail(list)}
               />
               <div>
                 <p
                   className="cursor-pointer font-semibold text-base my-2 line-clamp-2"
-                  onClick={() => {
-                    navigate(`/lists/detail/${list.id}`, {
-                      state: { list },
-                    });
-                  }}
+                  onClick={() => goToDetail(list)}
                 >
                   {list.snippet.title}
                 </p>
@@ -56,9 +56,7 @@ export default function GetLists({
                       if (localStorage.getItem("userInfo") === null) {
                         alert("로그인 후 이용해주세요.");
                       } else {
-                        let bookmarkArray = [...bookmark];
-                        bookmarkArray[key] = !bookmarkArray[key];
-                        setBookmark(bookmarkArray);
+                        bookmarkChange(key);
                         bookmarkCheck({
                           email: user.email,
                           id: user.id,
