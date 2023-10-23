@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { emailSignUpCheck } from "../service/user";
 
-export default function SignUpForm({ account, setAccount, accountChange }) {
+export default function SignUpForm({ account, setAccount, authChange }) {
   const [signUpEmail, setSignUpEmail] = useState("");
   const [signUpPassword, setSignUpPassword] = useState("");
   const [signUpName, setSignUpName] = useState("");
@@ -20,14 +20,8 @@ export default function SignUpForm({ account, setAccount, accountChange }) {
       setSignUpNickname(value);
     }
   };
-  const signUpOnSubmit = (e) => {
-    e.preventDefault();
-    emailSignUpCheck({
-      email: signUpEmail,
-      password: String(signUpPassword),
-      name: signUpName,
-      nickname: signUpNickname,
-    });
+
+  const creationComplete = () => {
     setTimeout(() => {
       setSignUpEmail("");
       setSignUpPassword("");
@@ -36,6 +30,17 @@ export default function SignUpForm({ account, setAccount, accountChange }) {
       alert("계정이 생성되었습니다.");
       setAccount(false);
     }, 1000);
+  };
+
+  const signUpOnSubmit = (e) => {
+    e.preventDefault();
+    emailSignUpCheck({
+      email: signUpEmail,
+      password: String(signUpPassword),
+      name: signUpName,
+      nickname: signUpNickname,
+    });
+    creationComplete();
   };
 
   return (
@@ -103,7 +108,7 @@ export default function SignUpForm({ account, setAccount, accountChange }) {
       <div className="flex justify-center mt-3">
         <button
           className="cursor-pointer text-blue-400 hover:text-blue-700 font-semibold"
-          onClick={accountChange}
+          onClick={authChange}
         >
           로그인하기
         </button>

@@ -1,12 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { emailLogin } from "../service/user";
 
-export default function LoginForm({
-  account,
-  navigate,
-  setUser,
-  accountChange,
-}) {
+export default function LoginForm({ account, navigate, setUser, authChange }) {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const loginOnChange = (e) => {
@@ -74,7 +69,7 @@ export default function LoginForm({
       <div className="flex justify-center mt-3">
         <button
           className="cursor-pointer text-blue-400 hover:text-blue-700 font-semibold"
-          onClick={accountChange}
+          onClick={authChange}
         >
           계정 만들기
         </button>
