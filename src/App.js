@@ -1,13 +1,6 @@
-import { useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
-import Home from "./routes/Home";
-import Lists from "./routes/Lists";
-import Login from "./routes/Login";
-import ListsDetail from "./routes/ListsDetail";
-import { useState } from "react";
-import MyPage from "./routes/Mypage";
-import BookmarkDetail from "./routes/BookmarkDetail";
+import RoutesInit from "./components/RoutesInit";
 
 function App() {
   const [user, setUser] = useState({});
@@ -24,27 +17,7 @@ function App() {
         <Navbar user={user} setUser={setUser} />
       </header>
       <main className="w-full flex justify-center min-h-full">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/lists" element={<Lists user={user} />} />
-          <Route path="/lists/:keyword" element={<Lists user={user} />} />
-          <Route
-            path="/lists/detail/:videoId"
-            element={<ListsDetail user={user} />}
-          />
-          <Route
-            path="/lists/bookmarkDetail/:videoId"
-            element={<BookmarkDetail user={user} />}
-          />
-          <Route
-            path="/login"
-            element={<Login user={user} setUser={setUser} />}
-          />
-          <Route
-            path="/user/:userName"
-            element={<MyPage user={user} setUser={setUser} />}
-          />
-        </Routes>
+        <RoutesInit user={user} setUser={setUser} />
       </main>
     </section>
   );

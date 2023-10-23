@@ -51,6 +51,5 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.3.2"
-  },
-  "homepage": "https://LEEJINYOUN.github.io/WhiteNoise-ReactApp/"
+  }
 }

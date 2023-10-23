@@ -14,6 +14,7 @@ export default function Home() {
     duration: 1800,
     offset: 0,
   });
+
   return (
     <section className="w-full flex flex-col">
       <Banner detailBtn={detailBtn} />
