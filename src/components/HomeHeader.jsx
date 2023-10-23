@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function Banner({ detailBtn }) {
+export default function HomeHeader({ detailBtn }) {
   return (
     <div className="w-full h-[90vh]">
       <img

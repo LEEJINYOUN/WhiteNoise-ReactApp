@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import Banner from "../components/Banner";
-import Explanation from "../components/Explanation";
-import Footer from "../components/Footer";
+import HomeHeader from "../components/HomeHeader";
+import HomeDescription from "../components/HomeDescription";
+import HomeFooter from "../components/HomeFooter";
 
 export default function Home() {
   const detailRef = useRef(null);
@@ -17,9 +17,9 @@ export default function Home() {
 
   return (
     <section className="w-full flex flex-col">
-      <Banner detailBtn={detailBtn} />
-      <Explanation detailRef={detailRef} />
-      <Footer />
+      <HomeHeader detailBtn={detailBtn} />
+      <HomeDescription detailRef={detailRef} />
+      <HomeFooter />
     </section>
   );
 }

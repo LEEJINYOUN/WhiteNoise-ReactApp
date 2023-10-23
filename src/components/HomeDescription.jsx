@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function Explanation({ detailRef }) {
+export default function HomeDescription({ detailRef }) {
   return (
     <div ref={detailRef} className="px-[15px] py-[25px] grid grid-cols-2">
       <div className="flex justify-center">
