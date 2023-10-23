@@ -1,29 +1,16 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { AiOutlineHome, AiFillHome } from "react-icons/ai";
-import { HiOutlineMusicNote, HiMusicNote } from "react-icons/hi";
-
-const menu = [
-  {
-    href: "/",
-    icon: <AiOutlineHome />,
-    clickedIcon: <AiFillHome />,
-  },
-  {
-    href: "/lists",
-    icon: <HiOutlineMusicNote />,
-    clickedIcon: <HiMusicNote />,
-  },
-];
+import { NAVBAR_MENU } from "../constants/NavbarMenu";
 
 export default function Navbar({ user, setUser }) {
-  const location = useLocation();
-  const btnStyle =
+  const nowLocation = useLocation();
+  const buttonStyle =
     "border border-gray-300 rounded-3xl px-4 py-2 text-base font-bold text-sky-400 hover:text-sky-600 transition duration-300 ease-in-out";
-  const oauthLogout = () => {
+  const logout = () => {
     setUser("");
     window.localStorage.clear();
   };
+
   return (
     <section className="flex justify-between items-center px-6">
       <NavLink to="/">
@@ -31,15 +18,17 @@ export default function Navbar({ user, setUser }) {
       </NavLink>
       <nav>
         <ul className="flex gap-6 items-center p-3 text-2xl">
-          {menu.map((item, key) => (
+          {NAVBAR_MENU.map((item, key) => (
             <li key={key}>
               <NavLink to={item.href}>
-                {location.pathname === item.href ? item.clickedIcon : item.icon}
+                {nowLocation.pathname === item.href
+                  ? item.clickedIcon
+                  : item.icon}
               </NavLink>
             </li>
           ))}
           {Object.keys(user).length === 0 ? (
-            <NavLink to="/login" className={btnStyle}>
+            <NavLink to="/login" className={buttonStyle}>
               로그인
             </NavLink>
           ) : (
@@ -54,7 +43,7 @@ export default function Navbar({ user, setUser }) {
                   alt="user profile"
                 />
               </NavLink>
-              <NavLink to="/login" className={btnStyle} onClick={oauthLogout}>
+              <NavLink to="/login" className={buttonStyle} onClick={logout}>
                 로그아웃
               </NavLink>
             </>
