@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { FETCH_DATA_COUNT } from "../constants/ListsConstant";
 import { useQuery } from "@tanstack/react-query";
 import Youtube from "../api/youtube";
-import { bookmarkCheck } from "../service/user";
+import { bookmarkCheck } from "../services/bookmark";
 import { AiOutlineCheck } from "react-icons/ai";
 import { AuthContext } from "../utils/AuthContext";
 

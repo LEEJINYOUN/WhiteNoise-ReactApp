@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { emailSignUpCheck } from "../service/user";
+import { emailSignUpCheck } from "../services/auth";
 
 export default function SignUpForm({ account, setAccount, authChange }) {
   const [signUpEmail, setSignUpEmail] = useState("");

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { emailLogin } from "../service/user";
+import { emailLogin } from "../services/auth";
 import { AuthContext } from "../utils/AuthContext";
 
 export default function LoginForm({ account, navigate, authChange }) {

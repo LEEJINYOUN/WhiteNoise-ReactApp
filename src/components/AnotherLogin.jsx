@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import axios from "axios";
 import { useGoogleLogin } from "@react-oauth/google";
-import { addUser } from "../service/user";
+import { addUser } from "../services/auth";
 import { AuthContext } from "../utils/AuthContext";
 
 export default function AnotherLogin({ navigate }) {

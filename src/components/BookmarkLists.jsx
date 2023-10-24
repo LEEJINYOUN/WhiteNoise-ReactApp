@@ -1,4 +1,4 @@
-import { getBookmarks, removeBookmark } from "../service/user";
+import { getBookmarks, removeBookmark } from "../services/bookmark";
 import { useQuery } from "@tanstack/react-query";
 import { AiOutlineCheck } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";

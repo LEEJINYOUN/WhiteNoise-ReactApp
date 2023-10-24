@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { bookmarkCheck } from "../service/user";
+import { bookmarkCheck } from "../services/bookmark";
 import { AiOutlineCheck } from "react-icons/ai";
 import { useContext } from "react";
 import { AuthContext } from "../utils/AuthContext";
