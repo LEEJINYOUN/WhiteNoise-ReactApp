@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import axios from "axios";
 import { useGoogleLogin } from "@react-oauth/google";
 import { addUser } from "../service/user";
+import { AuthContext } from "../utils/AuthContext";
 
-export default function AnotherLogin({ setUser, navigate }) {
+export default function AnotherLogin({ navigate }) {
+  const userContext = useContext(AuthContext);
   const buttonStyle =
     "cursor-pointer border border-gray-300 rounded-full mx-3 w-[45px] h-[45px]";
   const saveUserInfoInLocalStorage = ({ id, name, image, email, nickname }) => {
@@ -14,7 +16,7 @@ export default function AnotherLogin({ setUser, navigate }) {
       email,
       nickname,
     };
-    setUser(userObject);
+    userContext.setUser(userObject);
     localStorage.setItem("userInfo", JSON.stringify(userObject));
   };
   const googleLogin = useGoogleLogin({

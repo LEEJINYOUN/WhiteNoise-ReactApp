@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
 import SignUpForm from "../components/SignUpForm";
 import AnotherLogin from "../components/AnotherLogin";
+import { AuthContext } from "../utils/AuthContext";
 
-export default function Login({ user, setUser }) {
+export default function Login() {
+  const userContext = useContext(AuthContext);
   const navigate = useNavigate();
   const [account, setAccount] = useState(false);
   const authChange = () => {
@@ -13,7 +15,7 @@ export default function Login({ user, setUser }) {
 
   return (
     <section className="w-full h-[90vh]">
-      {Object.keys(user).length === 0 && (
+      {userContext.user === null && (
         <div
           className={`w-[400px] ${
             account === false ? "h-[560px]" : "h-[670px]"
@@ -22,7 +24,6 @@ export default function Login({ user, setUser }) {
           <LoginForm
             account={account}
             navigate={navigate}
-            setUser={setUser}
             authChange={authChange}
           />
           <SignUpForm
@@ -30,7 +31,7 @@ export default function Login({ user, setUser }) {
             setAccount={setAccount}
             authChange={authChange}
           />
-          <AnotherLogin setUser={setUser} navigate={navigate} />
+          <AnotherLogin navigate={navigate} />
         </div>
       )}
     </section>

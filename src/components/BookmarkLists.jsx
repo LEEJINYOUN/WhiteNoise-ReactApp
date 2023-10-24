@@ -2,11 +2,14 @@ import { getBookmarks, removeBookmark } from "../service/user";
 import { useQuery } from "@tanstack/react-query";
 import { AiOutlineCheck } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../utils/AuthContext";
+import { useContext } from "react";
 
-export default function BookmarkLists({ user }) {
-  getBookmarks({ email: user.email });
-  const { data } = useQuery(["lists", user.email], async () => {
-    return getBookmarks({ email: user.email }).then((res) => res);
+export default function BookmarkLists() {
+  const userContext = useContext(AuthContext);
+  getBookmarks({ email: userContext.user?.email });
+  const { data } = useQuery(["lists", userContext.user?.email], async () => {
+    return getBookmarks({ email: userContext.user?.email }).then((res) => res);
   });
   const navigate = useNavigate();
   const goToDetail = (list) => {
@@ -59,7 +62,7 @@ export default function BookmarkLists({ user }) {
                     className="cursor-pointer border-2 border-gray-400 z-10 rounded-full p-1 hover:bg-gray-400 hover:text-white"
                     onClick={() => {
                       removeBookmark({
-                        id: user.id,
+                        id: userContext.user?.id,
                         videoId: list.videoId,
                       });
                     }}

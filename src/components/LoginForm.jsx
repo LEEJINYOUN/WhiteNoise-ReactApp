@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { emailLogin } from "../service/user";
+import { AuthContext } from "../utils/AuthContext";
 
-export default function LoginForm({ account, navigate, setUser, authChange }) {
+export default function LoginForm({ account, navigate, authChange }) {
+  const userContext = useContext(AuthContext);
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const loginOnChange = (e) => {
@@ -19,7 +21,7 @@ export default function LoginForm({ account, navigate, setUser, authChange }) {
     emailLogin({
       email: loginEmail,
       password: String(loginPassword),
-      setUser,
+      setUser: userContext.setUser,
       navigate,
     });
   };

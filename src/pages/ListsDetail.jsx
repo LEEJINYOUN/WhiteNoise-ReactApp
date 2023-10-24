@@ -1,8 +1,11 @@
 import { useLocation } from "react-router-dom";
 import { bookmarkCheck } from "../service/user";
 import { AiOutlineCheck } from "react-icons/ai";
+import { useContext } from "react";
+import { AuthContext } from "../utils/AuthContext";
 
-export default function ListsDetail({ user }) {
+export default function ListsDetail() {
+  const userContext = useContext(AuthContext);
   const {
     state: { list },
   } = useLocation();
@@ -29,8 +32,8 @@ export default function ListsDetail({ user }) {
                 alert("로그인 후 이용해주세요.");
               } else {
                 bookmarkCheck({
-                  email: user.email,
-                  id: user.id,
+                  email: userContext.user?.email,
+                  id: userContext.user?.id,
                   videoId: list.id,
                   thumbnails: list.snippet.thumbnails.medium.url,
                   title: list.snippet.title,

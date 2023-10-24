@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FETCH_DATA_COUNT } from "../constants/ListsConstant";
 import { useQuery } from "@tanstack/react-query";
 import Youtube from "../api/youtube";
 import { bookmarkCheck } from "../service/user";
 import { AiOutlineCheck } from "react-icons/ai";
+import { AuthContext } from "../utils/AuthContext";
 
-export default function GetLists({ keyword, navigate, user }) {
+export default function GetLists({ keyword, navigate }) {
+  const userContext = useContext(AuthContext);
   const [bookmark, setBookmark] = useState(Array(FETCH_DATA_COUNT).fill(false));
   const { data: lists } = useQuery(["lists", keyword], () => {
     const youtube = new Youtube();
@@ -58,8 +60,8 @@ export default function GetLists({ keyword, navigate, user }) {
                       } else {
                         bookmarkChange(key);
                         bookmarkCheck({
-                          email: user.email,
-                          id: user.id,
+                          email: userContext.user?.email,
+                          id: userContext.user?.id,
                           videoId: list.id,
                           thumbnails: list.snippet.thumbnails.medium.url,
                           title: list.snippet.title,

@@ -4,7 +4,7 @@ import SearchForm from "../components/SearchForm";
 import Caution from "../components/Caution";
 import GetLists from "../components/GetLists";
 
-export default function Lists({ user }) {
+export default function Lists() {
   const [text, setText] = useState("");
   const { keyword } = useParams();
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ export default function Lists({ user }) {
     <section className="w-full flex flex-col max-w-screen-xl">
       <SearchForm text={text} setText={setText} navigate={navigate} />
       <Caution />
-      <GetLists keyword={keyword} navigate={navigate} user={user} />
+      <GetLists keyword={keyword} navigate={navigate} />
     </section>
   );
 }

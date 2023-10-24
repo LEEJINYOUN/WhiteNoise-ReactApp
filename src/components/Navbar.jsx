@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { NAVBAR_MENU } from "../constants/NavbarMenu";
+import { AuthContext } from "../utils/AuthContext";
 
-export default function Navbar({ user, setUser }) {
+export default function Navbar() {
+  const userContext = useContext(AuthContext);
   const nowLocation = useLocation();
   const buttonStyle =
     "border border-gray-300 rounded-3xl px-4 py-2 text-base font-bold text-sky-400 hover:text-sky-600 transition duration-300 ease-in-out";
   const logout = () => {
-    setUser("");
+    userContext.setUser(null);
     window.localStorage.clear();
   };
 
@@ -27,19 +29,19 @@ export default function Navbar({ user, setUser }) {
               </NavLink>
             </li>
           ))}
-          {Object.keys(user).length === 0 ? (
+          {userContext.user === null ? (
             <NavLink to="/login" className={buttonStyle}>
               로그인
             </NavLink>
           ) : (
             <>
               <NavLink
-                to={`/user/${user.name}`}
+                to={`/user/${userContext.user.name}`}
                 className="w-[33px] h-[33px] rounded-full"
               >
                 <img
                   className="w-[33px] h-[33px] rounded-full"
-                  src={user.image ?? undefined}
+                  src={userContext.user.image ?? undefined}
                   alt="user profile"
                 />
               </NavLink>

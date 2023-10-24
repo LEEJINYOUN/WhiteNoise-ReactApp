@@ -7,25 +7,19 @@ import BookmarkDetail from "../pages/BookmarkDetail";
 import Login from "../pages/Login";
 import MyPage from "../pages/Mypage";
 
-export default function RoutesInit({ user, setUser }) {
+export default function RoutesInit() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/lists" element={<Lists user={user} />} />
-      <Route path="/lists/:keyword" element={<Lists user={user} />} />
-      <Route
-        path="/lists/detail/:videoId"
-        element={<ListsDetail user={user} />}
-      />
+      <Route path="/lists" element={<Lists />} />
+      <Route path="/lists/:keyword" element={<Lists />} />
+      <Route path="/lists/detail/:videoId" element={<ListsDetail />} />
       <Route
         path="/lists/bookmarkDetail/:videoId"
-        element={<BookmarkDetail user={user} />}
+        element={<BookmarkDetail />}
       />
-      <Route path="/login" element={<Login user={user} setUser={setUser} />} />
-      <Route
-        path="/user/:userName"
-        element={<MyPage user={user} setUser={setUser} />}
-      />
+      <Route path="/login" element={<Login />} />
+      <Route path="/user/:userName" element={<MyPage />} />
     </Routes>
   );
 }
